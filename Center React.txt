@@ -1,0 +1,67 @@
+     <div class="container">
+      <h1 className="koini">rahul</h1>
+    </div>
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .koini{
+    background-color: brown;
+  }
+
+===================
+
+  <div className='rightView'>
+            <div className='top'>
+            <text className='topText'>Featured Articles</text>
+            <text className='topText1'>VIEW ALL</text>
+            </div>
+            <div className='line'></div>
+            <text>rahul</text>
+
+.rightView{
+    width: 800px;
+    height:380px;
+background: #fff;
+    margin-left: 15vh;
+    box-shadow: 0px 3px 8px 0 rgb(102 102 102 / 15%);
+    border-radius: 4px;
+    margin-top: 3%;
+    /* overflow: scroll; */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.top{
+    width: 760px;
+    height: 30px;
+   /* margin-left: 2%;
+   margin-top: 2%; */
+ align-self: center;
+   /* background-color:yellowgreen; */
+   display: flex;
+  align-items: center;
+  justify-content:space-between;
+
+}
+.topText{
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 15px;
+text-align: center;
+}
+.line{
+    border-width: 2%;
+    background-color: rgba(128, 128, 128, 0.384);
+    width: 760px;
+    height: 1px;
+    align-self: center;
+    display: flex;
+    /* margin-left: 2%; */
+}

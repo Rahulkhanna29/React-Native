@@ -1,0 +1,164 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+Apps.js
+
+import React, { Component, useEffect, useState } from "react"; 
+import { NavigationContainer } from '@react-navigation/native';
+ 
+import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import LoginSecond from "./src/LoginSecond";
+import LoginFirst from "./src/LoginFirst";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import AsyncExample from './src/AsyncExample';
+
+
+  const Stack = createStackNavigator();
+
+  function App() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='AsyncExample'>
+          <Stack.Screen name="First" component={LoginFirst} />
+          <Stack.Screen name="Second" component={LoginSecond} />
+        <Stack.Screen name='AsyncExample' component={AsyncExample}/>
+     </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+
+  
+  export default App;
+=======================================
+AsyncExample.js
+
+import React, { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Text, StyleSheet, View , Button } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { TextInput } from "react-native-gesture-handler";
+
+const AsyncExample=({navigation})=>{
+    const [name,setName]=useState('')
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         alert('rahul')},5000);
+    //     })
+    
+    
+const storeData=()=>{
+    AsyncStorage.setItem('user',name)
+}
+
+const getData = () => {
+
+    AsyncStorage.getItem("user")
+    .then((value) => {
+    alert(value);
+    })
+}
+
+const clear = () => {
+    AsyncStorage.removeItem('user');
+    setName('')
+}
+
+return(
+    <View>
+        <TextInput value={name}
+        onChangeText={setName}
+        style={{ fontSize: 30, alignSelf: 'center', marginTop: 30, color: 'black', borderWidth:2,marginBottom:20,width:"70%"}}
+        />
+               <Button
+                onPress={storeData}
+                title="save"
+            />
+            <Button
+                onPress={clear}
+                title="Clear"
+            />
+
+<Button
+                onPress={getData}
+                title="Get"
+            />
+
+<Button
+                onPress={()=>{navigation.navigate('First')}}
+                title="Next"
+            />  
+    </View>
+)
+
+}
+export default AsyncExample;
+===================================
+Data Shown TextInput to Text
+
+import React, { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Text, StyleSheet, View , Button } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { TextInput } from "react-native-gesture-handler";
+
+const AsyncExample=({navigation})=>{
+    const [name,setName]=useState('')
+    const [savedValue,setSavedValue]=useState('')
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         alert('rahul')},5000);
+    //     })
+    
+    
+const storeData=()=>{
+    AsyncStorage.setItem('user',name)
+}
+
+const getData = () => {
+
+    AsyncStorage.getItem("user")
+    .then((value) => {
+setSavedValue(value)
+    })
+}
+
+const clear = () => {
+    AsyncStorage.removeItem('user');
+    setName('')
+}
+
+return(
+    <View>
+        <TextInput value={name}
+        onChangeText={setName}
+        style={{ fontSize: 30, alignSelf: 'center', marginTop: 30, color: 'black', borderWidth:2,marginBottom:20,width:"70%"}}
+        />
+               <Button
+                onPress={storeData}
+                title="save"
+            />
+            <Button
+                onPress={clear}
+                title="Clear"
+            />
+
+<Button
+                onPress={getData}
+                title="Get"
+            />
+
+<Button
+                onPress={()=>{navigation.navigate('First')}}
+                title="Next"
+            />  
+ <Text  style={{ fontSize: 30, alignSelf: 'center', marginTop: 30, color: 'black', borderWidth:2,marginBottom:20,width:"70%"}}>
+     {savedValue}</Text>
+
+     <Text  style={{ fontSize: 30, alignSelf: 'center', marginTop: 30, color: 'black', borderWidth:2,marginBottom:20,width:"70%"}}>
+     {savedValue}</Text>
+
+    </View>
+)
+
+}
+export default AsyncExample;

@@ -1,0 +1,31 @@
+import { placeholder } from "@babel/types";
+import React, { useState } from "react";
+import { Text, View, TextInput, StyleSheet, TouchableOpacity, TextPropTypes, Keyboard } from "react-native";
+
+export default function abc() {
+
+  let a = {
+    fontSize: 25,
+    color: 'blue',
+    textAlign: 'center',
+    marginTop: 50
+  };
+
+  let [counter, setcounter] = useState(1);
+
+  let increaseCounter = () => {
+    setcounter(counter++);
+  };
+
+
+
+  return <View>
+
+    <Text style={a}>{counter}</Text>
+    <TouchableOpacity onPress={increaseCounter}>
+      <Text style={a}>Login</Text>
+    </TouchableOpacity>
+    <TextInput style={{ borderStyle: 'solid',marginTop:50 ,borderColor: 'black', borderRadius: 10, borderWidth: 2, alignSelf: "center", width: '70%' }}
+    ></TextInput>
+  </View>
+}

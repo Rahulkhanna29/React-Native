@@ -1,0 +1,119 @@
+
+// ====================================
+
+// import React, { useEffect, useState } from "react";
+// import { View, Image, TouchableOpacity, Text, Button } from "react-native";
+// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// import { GoogleSignin, statusCodes, GoogleSigninButton } from '@react-native-google-signin/google-signin';
+// // import auth from '@react-native-firebase/auth';
+
+// const Google = () => {
+//     const [loggedIn, setloggedIn] = useState(false);
+//     const [userInfo, setuserInfo] = useState([]);
+
+//     useEffect(() => {
+//         GoogleSignin.configure({
+//             scopes: ['email'],
+//             webClientId: '144400017912-2mmci6gsqmoa2u4e7q9ujspdomqor632.apps.googleusercontent.com',
+            
+//         })
+//     }, [])
+
+//     const signIn = async () => {
+
+//         try {
+//             await GoogleSignin.hasPlayServices();
+//             const {accessToken, idToken} = await GoogleSignin.signIn();
+//             setloggedIn(true);
+//             const credential = auth.GoogleAuthProvider.credential(
+//               idToken,
+//               accessToken, 
+//               );
+//               await auth().signInWithCredential(credential);
+//             } catch (error) {
+//                 console.error("errrorrrrr"+JSON.stringify(error))
+//             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+//                 // user cancelled the login flow
+//                 alert('Cancel');
+//             } else if (error.code === statusCodes.IN_PROGRESS) {
+//                 alert('Signin in progress');
+//                 // operation (f.e. sign in) is in progress already
+//             } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+//                 alert('PLAY_SERVICES_NOT_AVAILABLE');
+//                 // play services not available or outdated
+//             } else {
+//                 // some other error happened
+//             }
+//         }
+//     };
+//     const signOut = async () => {
+//         try {
+//             await GoogleSignin.revokeAccess();
+//             await GoogleSignin.signOut();
+//             setloggedIn(false);
+//             setuserInfo([]);
+//         } catch (error) {
+//             console.error(error);
+//         }
+//     };
+
+
+//     return (
+
+//         <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+//             <View>
+//                 <GoogleSigninButton
+//                     style={{ width: 192, height: 48 }}
+//                     size={GoogleSigninButton.Size.Wide}
+//                     color={GoogleSigninButton.Color.Dark}
+//                     onPress={() => signIn()}
+//                 />
+
+//             </View>
+//             <View>
+//                 {!loggedIn && <Text>You are currently logged out</Text>}
+//                 {loggedIn && (
+//                     <Button
+//                         onPress={signOut}
+//                         title="LogOut"
+//                         color="red"></Button>
+//                 )}
+//             </View>
+//         </View>
+
+//         //    <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+//         //        <TouchableOpacity onPress={() => signIn().then(() => console.log('Signed in with Google!'))}>
+//         //  <Image source={require("./Images/google.png")} 
+//         //  resizeMode="contain"
+//         //  style={{width:wp(20),height:hp(10)}}/>
+//         //  </TouchableOpacity>
+//         //  <TouchableOpacity>
+//         //  <Image source={require("./Images/facebook.png")}
+//         //   resizeMode="contain"
+//         //   style={{width:wp(20),height:hp(20)}}
+//         //  />
+//         //  </TouchableOpacity>
+
+//         //    </View>
+//     );
+// }
+// export default Google;
+
+====================
+
+    // try {
+            //   await GoogleSignin.hasPlayServices();
+            //   const userInfo = await GoogleSignin.signIn();
+            //   console.log(userInfo);
+            // } catch (error) {
+            //     console.log(error);
+            //   if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+            //     // user cancelled the login flow
+            //   } else if (error.code === statusCodes.IN_PROGRESS) {
+            //     // operation (e.g. sign in) is in progress already
+            //   } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            //     // play services not available or outdated
+            //   } else {
+            //     // some other error happened
+            //   }
+            // }

@@ -1,0 +1,50 @@
+import React from "react";
+import { Button, FlatList, Text, TextInput, View } from "react-native";
+import { useState } from "react/cjs/react.development";
+
+
+export default function abc() {
+
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+
+  return (
+    <View
+      style={{ width: '100%', height: '100%', alignSelf: 'center', justifyContent: 'center' }}>
+
+
+        {/* Text, Button and TextInput with State */}
+
+      {/* <Text style={{
+        fontSize: 30, borderColor: 'black', alignSelf: 'center',
+
+      }}
+      >{name}</Text> */}
+      <TextInput
+        value={name}
+        maxLength={5}
+placeholder='name'
+placeholderTextColor='grey'
+secureTextEntry={true}
+
+        onChangeText={(text) => { setName(text) }}
+        style={{
+          borderRadius: 3, borderColor: 'black', width: 250, height: 50, marginBottom: 10, alignSelf: 'center',
+          borderWidth: 1
+        }} />
+
+      <TextInput
+        value={password}
+        onChangeText={(text) => { setPassword(text) }}
+        style={{
+          borderRadius: 3, borderColor: 'black', width: 250, height: 50, marginBottom: 10, alignSelf: 'center',
+          borderWidth: 1
+        }} 
+        
+        />
+
+      <Button
+        onPress={() => { goToNext() }}
+        title="save"
+      /> 
+

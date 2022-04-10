@@ -1,0 +1,154 @@
+import React, {useState,useEffect} from 'react';
+import { 
+    View,
+    FlatList,
+    StyleSheet,
+    TouchableOpacity,
+    PermissionsAndroid , Text, Image,   } from 'react-native';
+import Contacts from 'react-native-contacts';
+import { hp, wp } from "./FixedSize";
+
+const Mycontact = () => {
+ const [myContacts, setMycontacts] = useState([]);
+    
+    useEffect(() => {``
+       getAllContact();
+    }, []);
+
+    async function getAllContact(){
+      try{
+        
+        const permission = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+          {
+            'title': 'Contacts',
+            'message': 'This app would like to view your contacts.',
+            'buttonPositive': 'Please accept bare mortal'
+          }
+          
+        );
+        // if(permission === PermissionsAndroid.RESULTS.GRANTED){
+        //   const contacts = await Contacts.getAll();
+        //   console.log('mikjeeee', JSON.stringify(contacts));
+        //   setMycontacts(contacts);
+        // }
+        if (permission === PermissionsAndroid.RESULTS.GRANTED) {
+          const contacts = await Contacts.getAll();
+          let sortedArr = contacts.sort((a, b) => {
+            let aName = a.givenName || a.displayName;
+            let bName = b.givenName || b.displayName;
+            return aName > bName
+          })
+  
+          setMycontacts(sortedArr);
+        }
+        else{
+          console.log("Permission Denied");
+          
+        }
+      }catch(error){
+        console.log(error);
+      }
+    }
+    return (
+        <View style={{height:'100%', width:'100%', backgroundColor:'white'}}>
+            <Text style={styles.headingtext}>
+        MyContacts
+      </Text>
+             <FlatList
+            data={[...myContacts]}
+          
+            renderItem={({item})=>{
+// alert(JSON.stringify(item))
+              return(
+                <TouchableOpacity 
+           style={{width:'80%',height:100, alignSelf:'center'}}
+           > 
+            
+
+
+      <View style={styles.profile2} >
+       
+       
+          {item.hasThumbnail === true ?    
+         <Image style={{height:hp(8),alignSelf:'center', borderWidth:1, borderColor:'transparent', borderRadius:50 , width: wp(15), marginLeft:20}} 
+         source={{uri : item?.thumbnailPath}} />
+
+
+: <Image source={require('./asset/contact.png')} style={styles.image1}></Image>}
+           
+        <View style={{ flexDirection: 'column' }}>
+          <Text style={styles.text}>{item?.givenName || item?.displayName || 'csdbvmdsb'} </Text>
+
+          <Text style={{ color: '#ba55d3', marginTop: 3, marginLeft:15 }}>{item?.phoneNumbers[0]?.number} </Text>
+        </View>
+      </View>
+               </TouchableOpacity>
+              )
+            }}
+            /> 
+        </View>
+    );
+}
+
+const styles= StyleSheet.create({
+Text1:{
+alignSelf:'center'
+},
+profile2: {
+  width: wp(80),
+  height:hp(12),
+  backgroundColor: 'white',
+  alignSelf: 'center',
+  borderRadius: 10,
+  flexDirection: 'row',
+  marginTop: 10,
+  shadowColor: 'grey',
+  shadowOpacity: 12,
+  elevation: 20,
+
+},  image2: {
+  width: 15,
+  height: 15,
+  borderRadius: 150 / 2,
+  overflow: "hidden",
+  borderWidth: 1,
+  borderColor: "grey",
+  marginTop: 60,
+  marginRight: 20
+
+},
+text: {
+  marginTop: hp(2.5),
+  fontWeight: 'bold',
+  fontSize: 20,
+  marginLeft:15,
+  color: 'black'
+},
+image1: {
+  width: wp(15),
+  height: hp(8),
+  borderRadius: 150 / 2,
+  overflow: "hidden",
+  borderWidth: 3,
+  borderColor: "grey",
+  marginTop: 15,
+  marginLeft: 15
+},
+leftElementContainer: {
+ 
+ 
+  paddingLeft: 13,
+},
+headingtext: {
+  fontSize: 25,
+  fontWeight: "bold",
+  alignSelf: 'center',
+  height: '8%',
+  justifyContent: 'center',
+  paddingTop: '2.5%'
+
+},
+})
+
+export default Mycontact;

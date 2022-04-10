@@ -1,0 +1,125 @@
+Install Native (Navigation) and Stack
+
+Apps.js
+import React, { Component, useEffect, useState } from "react"; (Only react from....)
+import { NavigationContainer } from '@react-navigation/native';
+ 
+import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import Screenfirst from "./src/Screenfirst";
+import ScreenSecond from "./src/SceenSecond";
+
+
+
+  const Stack = createStackNavigator();
+
+  function App() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="First" component={Screenfirst} />
+          <Stack.Screen name="Second" component={ScreenSecond} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+
+  
+  export default App;
+
+Screenfirst.js
+import { tSExternalModuleReference } from '@babel/types';
+import * as React from 'react';
+
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
+import { useState } from 'react/cjs/react.development';
+
+
+function Screenfirst({ navigation }) {
+  
+
+  const navigateToScreen=()=>{
+
+        navigation.navigate('Second',{'value':name});
+    
+      }
+    
+const [name, setName] = useState('')
+    return (
+      <View style={styles.MainContainer}>
+  
+        <Text style={styles.text}> Enter your Name</Text>
+        {/* <TextInput style={{borderRadius:3, borderColor:'black',width:250, height:50,marginBottom:10, 
+        borderWidth:1}}></TextInput> */}
+
+
+<TextInput
+style={{borderRadius:3, borderColor:'black',width:250, height:50,marginBottom:10, 
+borderWidth:1}}
+value={name}
+onChangeText={(text)=>{setName(text)}}
+/>
+        <Button onPress={navigateToScreen} title="Save" />
+        
+      </View>
+    );
+  }
+
+  export default Screenfirst;
+
+  
+const styles = StyleSheet.create({
+    MainContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+   
+    text: {
+      textAlign: 'center',
+      margin: 12,
+      fontSize: 22,
+      fontWeight: "100",
+    },
+   
+  });
+
+
+ScreenSecond.js
+import * as React from 'react';
+
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
+
+
+function ScreenSecond({ navigation , route}) {
+  
+    return (
+      <View style={styles.MainContainer}>
+  
+        <Text> {route.params.value}</Text>
+        {/* <Button onPress={()=>{alert(route.params.id)}} title="Show Name" /> */}
+
+      </View>
+    );
+  }
+
+  export default ScreenSecond;
+
+  
+const styles = StyleSheet.create({
+    MainContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+   
+    text: {
+      textAlign: 'center',
+      margin: 12,
+      fontSize: 22,
+      fontWeight: "100",
+    },
+   
+  });

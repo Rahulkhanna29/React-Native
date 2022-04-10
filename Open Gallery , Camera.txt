@@ -1,0 +1,99 @@
+install import ImagePicker from 'react-native-image-crop-picker';
+
+Apps.js
+
+import React, { Component, useEffect, useState } from "react";
+import { FlatList, Text, TouchableOpacity, View, Image} from 'react-native';
+import CustomLineView from "./CustomLineView";
+import CustomRenderView from "./CustomRenderView";
+export default function abc()
+{
+ useEffect(() => {
+  //   // alert('hg')
+  // }, [])
+
+//   const [name, setName] = useState('Happy')
+//   const [arr] = useState([{ name: 'a' }, { name: 'b' }, { name: 'c' }])
+//   const [myImage, setMyImage] = useState('')
+
+
+//   const openGallery = () => {
+//     ImagePicker.openPicker({
+//       width: 300,
+//       height: 400,
+//       cropping: true
+//     }).then(image => {
+//       setMyImage(image.path)
+//       console.log(image.path);
+//     });
+//   }
+
+
+
+//   const OpenCamera = () => {
+//     ImagePicker.openCamera({
+//       width: 300,
+//       height: 400,
+//       cropping: true,
+//     }).then(image => {
+//       // console.log(image);
+
+//     });
+//   }
+
+//   return(
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       {/* <FlatList
+//         data={arr}
+//         renderItem={CustomRenderView}
+//       /> */}
+
+//       <CustomLineView value='Open Gallery' onClick={() => { openGallery() }} color='yellow' />
+//       <CustomLineView value=' Camera' onClick={() => { OpenCamera() }} color='red' />
+
+
+//       <TouchableOpacity onPress={() => { 
+//         openGallery() }} style={{ borderWidth: 2, borderStyle: 'dotted', borderRadius: 2, width: 200, height: 100 }}>
+//         {myImage
+//           ?
+//           <Image source={{ uri: myImage }} style={{ borderWidth: 2, borderStyle: 'dotted', borderRadius: 2, width: 200, height: 100 }} resizeMode='contain' />
+//           :
+//           <Text>pick image </Text>}
+
+//       </TouchableOpacity>
+
+
+//     </View>
+//   )
+// }
+
+CustomLineView.js
+
+import React from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+
+const CustomLineView = (props) => {
+    return (
+        <View style={[{ height: 50, width: 200, marginVertical:10, backgroundColor: props.color }]}>
+            <TouchableOpacity onPress={() => { props.onClick() }}>
+                <Text style={{ alignSelf: 'center', fontSize: 25, fontWeight: 'bold' }}>{props.value}</Text>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+CustomRenderView.js
+export default CustomLineView;
+
+import React from "react";
+import { Text } from "react-native";
+
+
+const CustomRenderView = ({ item }) => {
+    return (
+        <Text style={{ alignSelf: 'center', fontSize: 25, fontWeight: 'bold' }}>{item.name}</Text>
+    )
+}
+
+
+export default CustomRenderView;

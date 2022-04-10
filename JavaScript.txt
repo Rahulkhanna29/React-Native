@@ -1,0 +1,75 @@
+Hello world
+
+console.log('Rahul')                            Rahul
+````````````````
+let,var & const
+
+let a=10;
+let b=20;                                           
+ 
+console.log(a+b)                               30  
+```````````````````````
+const a1=20;
+const b1=20
+const c=a1+b1;
+
+console.log(c)                                 40
+```````````````````````
+Template Literals
+
+const name='rahul'
+const age=21
+
+const a='my name is '+ name+" my age is "+ age      
+console.log(a)                                    my name is rahul my age is 21
+
+const b=`my name is ${name} my age is ${age}`  
+console.log(b)                                     my name is rahul my age is 21
+````````````````````````
+conditionals Truthy & Falsy
+
+('', false,undefined,null,0)          username is not exist
+("Rahul",defined,1,'  ')                   username is exist
+
+const username=1
+if(username){
+    console.log('username is exist')
+}else{                                            
+    console.log('username is not exist')
+}
+`````````````````````````````
+Ternary operator
+
+const token="dfdjf"
+const user= token ? true:false
+
+console.log(user)                                  true
+
+const age=50
+
+const user =age>=10 ?'adult': 'child'
+console.log(user)                              adult
+````````````````````````
+Short Circuiting 
+
+const name='jhj'
+
+const username=name || 'khanna'
+console.log(username)                      jhj
+
+
+const name=''
+
+const username=name || 'khanna'(or operator) (dono mese jo bi true hogga vo show ho jayega)
+console.log(username)                            khanna
+
+
+const name='jhj'
+
+const username=name && 'khanna'
+console.log(username)                         khanna
+
+const name=''
+
+const username=name && 'khanna'(and operator) (dono mese eek bi galat)
+console.log(username)                            empty

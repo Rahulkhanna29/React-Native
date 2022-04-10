@@ -1,0 +1,46 @@
+Open CMD
+git --version (It shows version)
+git config --global user.name "Rahul khanna"
+git config --global user.email "Rahul khanna"
+
+mkdir (filename)
+cd filename
+git init
+git add Sum.java   (file)
+git status   (new file shown)
+git commit -m "intial commit"   (it shows like history)
+git checkout (branch name or commit .....) for purana valla code
+git checkout master     (for return) 
+touch .gitignore     (for secret file)
+
+if we changed then add, commit and push.
+
+merge(from one file to another)
+
+git checkout rahul
+git merge khanna/multiply
+
+for new branch
+
+git branch
+git branch rahul
+get checkout rahul 
+
+git branch khanna/multiply
+git checkout khanna/multiply
+
+branch:-main
+git checkout rahul
+git push -u origin rahul
+
+pull 
+cd..
+git clone https://github.com/Rahulkhanna29/First-Contribution.git
+cd First-Contribution
+ls (file shown)
+vim README.md
+ 
+
+for Delete
+git push origin --delete test  (origin/test)
+git branch -D Rahul

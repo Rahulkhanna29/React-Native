@@ -1,0 +1,73 @@
+import React from "react";
+import { View,Text } from "react-native";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Setting from "./Setting";
+import Home from "./Home";
+import Wallet from "./Wallet";
+import Profile from "./Profile";
+
+
+
+
+const Tab =createBottomTabNavigator();
+const TabBottom=()=>{
+    return(
+   <Tab.Navigator>
+       <Tab.Screen name="Home" component={Home}  options={{headerShown:false}} ></Tab.Screen>
+       <Tab.Screen name="Wallet" component={Wallet}  options={{headerShown:false}} ></Tab.Screen>
+       <Tab.Screen name="Profile" component={Profile}  options={{headerShown:false}} ></Tab.Screen>
+       <Tab.Screen name="Setting" component={Setting}  options={{headerShown:false}} ></Tab.Screen>
+   </Tab.Navigator>
+    );
+}
+export default TabBottom;
+
+
+=============================
+With Function
+
+// function Home(){
+//     return (
+//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//         <Text>Home!</Text>
+//       </View>
+//     );
+// }
+
+// function Setting() {
+//     return (
+//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//         <Text>Settings!</Text>
+//       </View>
+//     );
+//   }
+  
+//   function Profile() {
+//     return (
+//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//         <Text>Settings!</Text>
+//       </View>
+//     );
+//   }
+//   function Wallet() {
+//     return (
+//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//         <Text>Settings!</Text>
+//       </View>
+//     );
+//   }
+
+//   const Tab = createBottomTabNavigator();
+  
+//   export default function TabBottom() {
+//     return (
+    
+//         <Tab.Navigator>
+//           <Tab.Screen name="Home" component={Home} options={{headerShown:false}} />
+//           <Tab.Screen name="Settings" component={Setting}  options={{headerShown:false}}/>
+//           <Tab.Screen name="Profile" component={Profile} options={{headerShown:false}}/>
+//           <Tab.Screen name="Wallet" component={Wallet}  options={{headerShown:false}}/>
+//         </Tab.Navigator>
+  
+//     );
+//   }
