@@ -1,0 +1,94 @@
+const getAnswer = async () => {                         // Normal data Axios 1
+    try {
+      let response = await axios.get('http://node.abundancetacc.com/list-crypto/market-data/BTCUSDT');
+    return response.data.data;
+  } catch (err){
+        console.error(err);
+    }
+    console.log('chala');
+};
+
+========================================
+ let appointment = [{title:'Wishlist'}];
+
+export const getMarket = () => {                 // Normal data type 2 Fetch Redux
+    try {
+        // console.log('getCoins')
+        return async dispatch => {
+            const result = await fetch(MARKET, {
+                method: 'GET',
+            });
+            const json = await result.json();
+ 
+    if (json) {
+    //    console.log(json)
+        dispatch({
+            type: GET_MARKET,
+            payload: json,
+        });
+    } else {
+        console.log('Unable to fetch!');
+    }
+}} catch (error) {
+        console.log(error);
+    }
+};
+=====================================
+
+export const getCoins = () => {                // Dynamic for loop data Axios Good one
+    try { 
+        // console.log('getCoins')
+        return async dispatch => {
+            const result = await fetch(API_URL, {
+                method: 'GET',
+            });
+            const json = await result.json();
+       
+            for (let index = 0; index <  Object.keys(json.data).length; index++) {
+               const  newItem = {
+               title:  Object.keys(json.data)[index],
+               NewData:json.tickers[index],
+                NewData1:json.data,
+          };
+       appointment.push(newItem);
+        }
+
+            dispatch({
+                type: GET_COINS,
+                payload: appointment,
+            });
+        };
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+===================================
+
+ // useEffect(() => {                                            // Normal Axios 
+    //     Axios.get('http://node.finexchanges.com/list-crypto/get')
+    //         .then((response) => setData(response.data["data"]))
+    //         .catch((error) => console.error(error))
+    //         .finally(() => setLoading(false));
+    // }, []);
+
+=====================================
+
+ // useEffect(() => {                                     // Axios with loop 2
+    //     // console.log("hey")
+    //     Axios.get('http://node.finexchanges.com/list-crypto/get')
+    //         .then(response => {
+    //             for (let index = 0; index < Object.keys(response.data["data"]).length; index++) {
+    //                 const newItem = {
+    //                     title: Object.keys(response.data["data"])[index],
+    //                 };
+    //                 theArray.push(newItem)
+
+    //             }
+
+    //             settop(theArray);
+    //         })
+
+    //         .catch((error) => console.error(error))
+    //         .finally(() => setLoading(false));
+    // }, []);
