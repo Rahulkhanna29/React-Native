@@ -1,0 +1,14 @@
+wss://stream.binance.com:9443/ws
+
+{
+"method": "SUBSCRIBE",
+"params":
+[
+"dogeusdt@ticker",
+"xrpusdt@ticker"
+],
+"id": 1
+}
+
+
+http://node.finexchanges.com/list-crypto/get

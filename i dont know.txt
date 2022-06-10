@@ -1,0 +1,21 @@
+
+   const [exampleState, setExampleState] = useState(DATA5)
+
+   
+  Object.keys(data).forEach((number, index)=>{
+console.log(number + index)
+//  addElement();
+}); 
+const addElement= ({ number, index }) => {
+      //  console.log(number+"$$$$$$$$$$"+index); 
+
+    var newArray = [...DATA5, {title :number, key: index}];
+    setExampleState(newArray);
+  }  
+ 
+// console.log("kkkkkkkk-------"+exampleState.length)///
+    return (  
+       
+        <View style={styles.container}> 
+ 
+ <View> 

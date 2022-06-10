@@ -1,0 +1,41 @@
+/* eslint-disable no-unreachable */
+export const GET_COINS = 'GET_COINS';
+
+// const API_URL = 'http://node.finexchanges.com/list-crypto/get';
+// const API_URL = 'https://server.bitqixnode.co.in/list-crypto/get';
+const API_URL = 'http://node.abundancetacc.com/list-crypto/get';
+
+  let appointment = [{title:'Wishlist'}];
+
+
+export const getCoins = () => {
+    try {
+        // console.log('getCoins')
+        return async dispatch => {
+            const result = await fetch(API_URL, {
+                method: 'GET',
+            });
+            const json = await result.json();
+       
+            for (let index = 0; index <  Object.keys(json.data).length; index++) {
+               const  newItem = {
+               title:  Object.keys(json.data)[index],
+               NewData:json.tickers[index],
+                NewData1:json.data,
+          };
+       appointment.push(newItem);
+        }
+
+            dispatch({
+                type: GET_COINS,
+                payload: appointment,
+            });
+        };
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+
+

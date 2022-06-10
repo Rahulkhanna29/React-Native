@@ -1,0 +1,86 @@
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+    const client = new W3CWebSocket("wss://stream.binance.com:9443/ws");
+
+ useEffect(() => {
+    
+        client.onopen = () => {
+          console.log('WebSocket Client Connected');
+          client.send(JSON.stringify({
+
+                              'method': 'SUBSCRIBE',
+                              'params':
+                              [
+                             'dogeusdt@ticker',
+                          'xrpusdt@ticker',
+                             'bnbusdt@ticker',
+                             'cakeusdt@ticker',
+                             'maticusdt@ticker',
+                             'trxusdt@ticker',
+                             'ltcusdt@ticker',
+                             'ethbtc@ticker',
+                             '1inchusdt@ticker',
+                             'wrxusdt@ticker',
+                             'dotusdt@ticker',
+                             'solusdt@ticker',
+                             'xrpbtc@ticker',
+                             'dogebtc@ticker',
+                             'maticbtc@ticker',
+                             'trxbtc@ticker',
+                             'solbtc@ticker',
+                             'bnbbtc@ticker',
+                             '1inchbtc@ticker',
+                             'wrxbtc@ticker',
+                             'ltcbtc@ticker',
+                             'adabtc@ticker',
+                             'unibtc@ticker',
+                             'cakebtc@ticker',
+                             'neobtc@ticker',
+                             'dotbtc@ticker',
+                             'adausdt@ticker',
+                             'shibusdt@ticker',
+                             'uniusdt@ticker',
+                             'neousdt@ticker',
+                             'xrpbnb@ticker',
+                             'maticbnb@ticker',
+                             'trxbnb@ticker',
+                             'solbnb@ticker',
+                             'wrxbnb@ticker',
+                             'ltcbnb@ticker',
+                             'adabnb@ticker',
+                             'dotbnb@ticker',
+                             'cakebnb@ticker',
+                             'neobnb@ticker',
+                             'btcinr@ticker',
+                             'ethinr@ticker',
+                             'xrpinr@ticker',
+                             'dogeinr@ticker',
+                             'bnbinr@ticker',
+                             'cakeinr@ticker',
+                             'maticinr@ticker',
+                             'trxinr@ticker',
+                             'ltcinr@ticker',
+                             '1inchinr@ticker',
+                             'wrxinr@ticker',
+                             'dotinr@ticker',
+                             'solinr@ticker',
+                             'adainr@ticker',
+                             'shibinr@ticker',
+                             'uniinr@ticker',
+                             'neoinr@ticker',
+                             'btcusdt@ticker',
+                             'ethusdt@ticker',
+                             'lunausdt@ticker',
+                             'ftmusdt@ticker',
+                             'icpusdt@ticker' ],
+                              'id': 1,
+            
+                          }));
+                      
+        };
+        client.onmessage = (msg) => {
+        
+             let stock = JSON.parse(msg.data);
+            setUserInput(stock);
+             
+        };
+      },[]);

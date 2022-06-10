@@ -1,0 +1,8 @@
+   <View style={{width:wp(95), height:hp(8), backgroundColor:'#ffdbbc', borderRadius:8,alignItems:'center',flexDirection:'row',position:'absolute',zIndex:-1,justifyContent:'space-around',bottom:0,alignSelf:'center'}}>
+    <TouchableOpacity style={styles.PricesLastViewbtn}>
+                            <Text style={styles.btnPriceText}>BUY</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.PricesLastViewbtn1}>
+                            <Text style={styles.btnPriceText}>SELL</Text>
+                        </TouchableOpacity>
+    </View>

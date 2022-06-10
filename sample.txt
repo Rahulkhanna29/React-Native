@@ -1,0 +1,346 @@
+/* eslint-disable eol-last */
+/* eslint-disable quotes */
+/* eslint-disable no-unused-vars */
+/* eslint-disable comma-dangle */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable no-trailing-spaces */
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import Info from './Info';
+import OrderBook from './OrderBook';
+import OrderVolume from './OrderVolume';
+import TradeHistory from './TradeHistory';
+import styles from '../StyleSheet';
+import { Switch } from 'react-native-switch';
+import ToggleSwitch from 'toggle-switch-react-native';
+import { View, Text, Image, ImageBackground, FlatList, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+const Tab = createMaterialTopTabNavigator();
+
+
+const PricesLast = () => {
+
+    //   const navigation = useNavigation();
+
+    return (
+
+
+
+        <View style={styles.container}>
+            <View >
+                <ImageBackground style={{ width: '100%', height: 300 }} source={require('../Assets/back.png')}>
+                    <View style={styles.PricesLast}>
+                        <View>
+                            <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => navigation.goBack()}>
+                                <Image style={styles.img2} source={require('../Assets/arrow-left.png')}></Image>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.row1}>
+                            <View>
+                                <Image style={styles.PricesLastimg} source={require('../Assets/pricealert.png')}></Image>
+                                <Text style={{ fontSize: 10, color: 'white' }}>Price Alert</Text>
+
+                            </View>
+                            <View >
+                                <TouchableOpacity >
+                                    <Image style={styles.PricesLastimg2} source={require('../Assets/watchlist.png')}></Image>
+                                    <Text style={{ fontSize: 10, color: 'white' }}>Cancel</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+
+
+                    </View>
+                </ImageBackground>
+            </View>
+            <View style={styles.SelectPaymentMethodView}>
+                <View style={styles.SelectPaymentMethodView1}>
+                    <View style={styles.PricesLastView}>
+
+                        <View style={{ width: wp(95), height: hp(8), backgroundColor: '#ffebdc', borderRadius: 8, }}>
+                            <View style={styles.row}>
+                                <Image style={styles.lighticon1} source={require('../Assets/bitcoin.png')} />
+                                <Text style={styles.LiveText}>Bitcoin Coin</Text>
+                            </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <View>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 12, color: '#332b27', marginLeft: wp(2), alignSelf: 'center' }}>Rs.29,120.87</Text>
+                                </View>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Image style={styles.img4} source={require('../Assets/top.png')}></Image>
+                                    <Text style={styles.Modal}>+13.41%</Text>
+                                    <Text style={styles.ModalText1}>[+1,481,46]</Text>
+                                </View>
+                            </View>
+
+                        </View>
+                        <ScrollView showsVerticalScrollIndicator={false}>
+
+                            <View style={{ alignItems: 'center' }}>
+                                <View style={{ width: wp(90), marginTop: hp(1), }}>
+                                    <Image source={require('../Assets/graph.png')} />
+                                </View>
+
+
+
+                                <View style={{ width: wp(90), height: hp(5), marginTop: hp(1), backgroundColor: 'white', borderRadius: wp(1), flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+                                    <View style={{
+                                        width: wp(10),
+                                        height: hp(4),
+                                        backgroundColor: '#e57920',
+                                        borderRadius: 8,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+
+                                        <Text style={{ color: 'white', fontSize: 11, }}>1H</Text>
+
+                                    </View>
+                                    <View style={{
+                                        width: wp(10),
+                                        height: hp(4),
+                                        backgroundColor: '#e57920',
+                                        borderRadius: 8,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+
+                                        <Text style={{ color: 'white', fontSize: 11, }}>1d</Text>
+
+                                    </View>
+                                    <View style={{
+                                        width: wp(10),
+                                        height: hp(4),
+                                        backgroundColor: '#e57920',
+                                        borderRadius: 8,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+
+                                        <Text style={{ color: 'white', fontSize: 11, }}>1W</Text>
+
+                                    </View>
+                                    <View style={{
+                                        width: wp(10),
+                                        height: hp(4),
+                                        backgroundColor: '#e57920',
+                                        borderRadius: 8,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+
+                                        <Text style={{ color: 'white', fontSize: 11, }}>1M</Text>
+
+                                    </View>
+                                    <View style={{
+                                        width: wp(10),
+                                        height: hp(4),
+                                        backgroundColor: '#e57920',
+                                        borderRadius: 8,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+
+                                        <Text style={{ color: 'white', fontSize: 11, }}>1Y</Text>
+
+                                    </View>
+                                    <View style={{
+                                        width: wp(10),
+                                        height: hp(4),
+                                        backgroundColor: '#e57920',
+                                        borderRadius: 8,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+
+                                        <Text style={{ color: 'white', fontSize: 11, }}>ALL</Text>
+
+                                    </View>
+                                </View>
+                                {/* <View style={{width:wp(95), height:hp(8), backgroundColor:'#ffdbbc', borderRadius:8, padding:wp(2),marginTop:hp(1),alignItems:'center',flexDirection:'row',}}>
+             <View>
+                 <Image style={{marginLeft:wp(1)}} source={require('../Assets/Group544.png')} />
+             </View>
+             <View style={{width:wp(60), height:hp(8),justifyContent:'center', marginLeft:wp(10)}}> 
+             <Text style={{fontWeight:'bold',fontSize:12,color:'#e57920',}}>Add BNB Price ALerts</Text>
+             <Text style={{fontSize:12,color:'#332b27', }}>Never Miss Out On Price Movement</Text>
+
+             </View>
+
+                </View> */}
+                                <View style={{ width: wp(95), height: hp(100), backgroundColor: 'red', marginTop: hp(2) }}>
+                                    <Tab.Navigator
+                                        screenOptions={{
+                                            headerShown: false,
+                                            labeled: false,
+                                            tabBarIndicatorStyle: {
+                                                backgroundColor: '#26180c',
+                                                //   height: 2.5,
+                                                //   bottom: -1,
+                                            },
+                                            tabBarActiveTintColor: '#e8a121',
+                                            tabBarInactiveTintColor: '#ffebdc',
+                                            tabBarLabel: () => { return null },
+                                            tabBarStyle: {
+                                                height: 60,
+                                                width: wp(95),
+
+                                                // paddingTop: 0,
+                                                // backgroundColor: '#26180c',    
+                                                // position: 'absolute',
+                                                // borderTopWidth: 0,
+                                                justifyContent: 'center'
+                                            },
+                                        }}
+                                    >
+
+
+
+
+
+
+                                        <Tab.Screen name="Info" component={Info} options={{
+                                            tabBarIcon: ({ focused, backgroundColor }) => (
+                                                <View style={{
+                                                    width: wp(20), 
+                                                    height: hp(4),
+                                                    backgroundColor: focused ? '#e57920' : '#26180c',
+                                                    borderRadius: 8,
+                                                    alignItems:'center',
+                                                  alignSelf:'center',
+                                                    justifyContent:'center',
+                                                }}>
+
+                                                    <Text style={{ color: 'white', fontSize: 11, }}>Info</Text>
+
+                                                </View>
+                                            ), headerShown: false
+
+
+                                        }}></Tab.Screen>
+                                        <Tab.Screen name="OrderBook" component={OrderBook} options={{
+                                            tabBarIcon: ({ focused, backgroundColor }) => (
+                                                <View style={{
+                                                    width: wp(20),
+                                                    height: hp(4),
+                                                    backgroundColor: focused ? '#e57920' : '#26180c',
+                                                    borderRadius: 8,
+                                                    alignItems:'center',
+                                                  alignSelf:'center',
+                                                    justifyContent:'center',
+                                                }}>
+
+                                                    <Text style={{ color: 'white', fontSize: 11, }}>Order Book</Text>
+
+                                                </View>
+                                            ), headerShown: false
+
+
+                                        }}></Tab.Screen>
+
+                                        <Tab.Screen name="OrderVolume" component={OrderVolume} options={{
+tabBarIcon:({focused,backgroundColor})=>(
+    <View style={{  width:wp(20),
+    height:hp(4),
+    backgroundColor:focused?'#e57920':'#26180c',
+    borderRadius:8,
+    alignItems:'center',
+                                                  alignSelf:'center',
+                                                    justifyContent:'center',}}>
+     
+<Text style={{color:'white',fontSize:11,}}>Order Volume</Text>
+
+    </View>
+),headerShown:false
+
+
+       }}></Tab.Screen>
+       <Tab.Screen name="TradeHistory" component={TradeHistory} options={{
+tabBarIcon:({focused,backgroundColor})=>(
+    <View style={{  width:wp(20),
+    height:hp(4),
+    backgroundColor:focused?'#e57920':'#26180c',
+    borderRadius:8,
+    alignItems:'center',
+    justifyContent:'center', alignSelf:'center'}}>
+     
+<Text style={{color:'white',fontSize:11,}}>Trade History</Text>
+
+    </View>
+),headerShown:false
+
+
+       }}></Tab.Screen>
+                                    </Tab.Navigator>
+                                </View>
+
+
+
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                                <Text>rahul</Text>
+                            </View>
+                        </ScrollView>
+                    </View>
+
+
+                </View>
+            </View>
+            <View style={{ width: wp(95), height: hp(8), borderRadius: 8, alignItems: 'center', flexDirection: 'row', position: 'absolute', zIndex: -1, justifyContent: 'space-around', bottom: 0, alignSelf: 'center', backgroundColor: '#ffebdc' }}>
+                <TouchableOpacity style={styles.PricesLastViewbtn}>
+                    <Text style={styles.btnPriceText}>BUY</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.PricesLastViewbtn1}>
+                    <Text style={styles.btnPriceText}>SELL</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+
+
+
+    );
+};
+export default PricesLast;

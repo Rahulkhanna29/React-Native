@@ -1,0 +1,227 @@
+<View style={styles.TwoButton1}>
+                            <View style={[styles.btn,{backgroundColor:state.backgroundColor, }]}>
+                            <TouchableOpacity  onPress={()=>changeColor()} >
+                            <Text style={styles.btnText}
+               >My Wishlist</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={[styles.btn,{backgroundColor:state.backgroundColor2, }]}>
+                            <TouchableOpacity  onPress={()=>changeColor()}
+                  >
+                                <Text  style={styles.btnText}
+                 >All Coins</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+
++++++++++++++++++++++++++++++++++++++++++++
+
+                             <View style={{  height: 60, width:wp(95), backgroundColor: 'red',    
+justifyContent:'center',alignSelf:'center',marginTop:hp(2)}}>
+<Text>rahul</Text>
+
+
+  
+<FlatList 
+data={Object.keys(data)}
+horizontal={true} 
+renderItem={({item, index})=>{
+return(
+   <View style={{  width:wp(18),
+    height:hp(4),
+    backgroundColor:'#e57920', 
+    borderRadius:8,
+    alignItems:'center', 
+    justifyContent:'center',  alignSelf:'center', }}> 
+     
+<Text style={{color:'white',fontSize:11,}}>My Wishlist</Text>
+
+    </View>
+)}}
+
+/>
+
+                              
+   
+           </View> 
+
+================================================
+
+
+ <View style={{width:wp(95), height:hp(100), backgroundColor:'red',borderRadius:wp(3),alignSelf:'center'}}>
+                        <Tab.Navigator 
+                        screenOptions={{
+  headerShown: false,
+  labeled:false,
+tabBarIndicatorStyle:{
+          backgroundColor: '#26180c',
+        },
+  tabBarActiveTintColor:'#e8a121',
+  tabBarInactiveTintColor:'#ffebdc',
+ tabBarLabel:() => {return null},
+  tabBarStyle: {
+    height: 60,
+    width:wp(95),
+    backgroundColor: '#26180c',   
+  justifyContent:'center',
+},
+}}>
+
+
+
+
+
+         <Tab.Screen name="MyWishlist" component={MyWishlist} options={{
+tabBarIcon:({focused,backgroundColor})=>(
+    <View style={{  width:wp(18),
+    height:hp(4),
+    backgroundColor:focused?'#e57920':'#26180c',
+    borderRadius:8,
+    alignItems:'center',
+    justifyContent:'center',  alignSelf:'center', }}>
+     
+<Text style={{color:'white',fontSize:11,}}>My Wishlist</Text>
+
+    </View> 
+),headerShown:false
+
+
+       }}></Tab.Screen>
+
+       ==========================
+
+
+
+ <View>
+//                 <ImageBackground style={{ width: '100%', height: 300 }} source={require('../Components/Assets/back.png')}>
+//                     <View style={styles.PricesView}>
+//                         <Text style={styles.Prices}>Prices</Text>
+//                         <View style={styles.PricesTextInput}>
+//                             <View style={{ alignSelf: 'center' }}>
+//                                 <AntDesign name="search1" color='#7e7c7a' size={25} style={{ marginLeft: wp(2) }} />
+//                             </View>
+//                             <TextInput placeholder='search coins to invest...' style={styles.PricesTextInput1}></TextInput>
+//                             </View>
+
+//       <View style={{width:wp(95), height:hp(100), backgroundColor:'red',borderRadius:wp(3),alignSelf:'center'}}>
+//                         <Tab.Navigator 
+//                         screenOptions={{
+//   headerShown: false,
+//   labeled:false,
+// tabBarIndicatorStyle:{
+//           backgroundColor: '#26180c',
+//         },
+//   tabBarActiveTintColor:'#e8a121',
+//   tabBarInactiveTintColor:'#ffebdc',
+//  tabBarLabel:() => {return null},
+//   tabBarStyle: {
+//     height: 60,
+//     width:wp(95),
+//     backgroundColor: '#26180c',   
+//   justifyContent:'center',
+// },
+// }}>
+
+
+
+
+//  <Tab.Screen name="MyWishlist" component={MyWishlist} options={{
+// tabBarIcon:({focused,backgroundColor})=>(
+//     <View style={{  width:wp(18),
+//     height:hp(4),
+//     backgroundColor:focused?'#e57920':'#26180c', 
+//     borderRadius:8,
+//     alignItems:'center',
+//     justifyContent:'center',  alignSelf:'center', }}>
+     
+// <Text style={{color:'white',fontSize:11,}}>My Wishlist</Text>
+
+//     </View> 
+// ),headerShown:false
+
+
+//        }}></Tab.Screen> 
+
+
+//  <Tab.Screen name="btc" component={BTC} options={{
+// tabBarIcon:({focused,backgroundColor})=>(
+//     <View style={{  width:wp(18),
+//     height:hp(4),
+//     backgroundColor:focused?'#e57920':'#26180c', 
+//     borderRadius:8,
+//     alignItems:'center',
+//     justifyContent:'center',  alignSelf:'center', }}>
+     
+// <Text style={{color:'white',fontSize:11,}}>My Wishlist</Text>
+
+//     </View> 
+// ),headerShown:false
+
+
+//        }}></Tab.Screen>
+  
+     
+//          </Tab.Navigator>
+//                         </View>
+                            
+  
+
+     
+                          
+                        
+//                         <View style={{width:wp(95), height:hp(100), backgroundColor:'#ffebdc', marginTop:hp(2),borderRadius:wp(3),alignSelf:'center'}}>
+                  
+//                         </View>
+                       
+//                     </View>
+//                 </ImageBackground>
+//             </View>
+
+
+       <Tab.Screen name="BNB" component={BNB} options={{
+tabBarIcon:({focused,backgroundColor})=>(
+    <View style={{  width:wp(18),
+    height:hp(4),
+    backgroundColor:focused?'#e57920':'#26180c',
+    borderRadius:8,
+    alignItems:'center',
+    justifyContent:'center',  alignSelf:'center',}}>
+     
+<Text style={{color:'white',fontSize:11,}}>BNB</Text>
+
+    </View>
+),headerShown:false
+
+
+       }}></Tab.Screen>
+     
+         </Tab.Navigator>
+                        </View>
+==============================
+ <FlatList 
+data={myloop}  
+horizontal={true} 
+renderItem={({item, index})=>{
+return(
+   <View style={{  width:wp(18),
+    height:hp(4),
+    backgroundColor:'#e57920', 
+    borderRadius:8,
+    alignItems:'center', 
+    justifyContent:'center',  alignSelf:'center',marginRight:wp(1) }}> 
+     
+<Text style={{color:'white',fontSize:11,}}>{item}</Text>
+
+    </View>
+)}}
+
+/>
+=======================================
+ <TabSelectorAnimation
+        onChangeTab={setIndexTab}
+        style={styles.tabSelector}
+        tabs={myloop}
+      />    
+
+

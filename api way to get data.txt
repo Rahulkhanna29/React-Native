@@ -1,0 +1,37 @@
+{
+    "status_code": "1",
+    "status_text": "success",
+    "message": "List Crypto(s) fetched Successfully",
+    "data": {
+        "USDT": [
+            {
+                "image": "http://demo.finexchanges.com/backend/public/currency_images/xrp.png",
+                "symbol": "XRPUSDT",
+                "flag": "0",
+                "listed": false,
+                "id": 3,
+                "name": "Ripple",
+                "currency": "XRP",
+                "pair_with": "USDT",
+                "decimal_currency": "1",
+                "decimal_pair": "5",
+                "buy_desc": "",
+                "sell_desc": "",
+                "created_at": "2022-02-28T15:29:22.000Z",
+                "updated_at": "2022-03-29T00:23:11.000Z",
+                "price": "0.65240000",
+                "change": "-8.24",
+                "volume": "274311060.00000000",
+                "high": "0.71180000",
+                "low": "0.64510000"
+            },
+
+
+
+   <Text style={styles.CoinText}>{data.data?.USDT[0].name}</Text>
+
+    data={data.data?.USDT}
+
+  <Image style={styles.lighticon1} source={{uri:item.image}} />
+                                        <View style={styles.vertical}>
+                                            <Text style={styles.LiveText}>{item.name}</Text>

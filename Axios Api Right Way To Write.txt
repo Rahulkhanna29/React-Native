@@ -1,0 +1,14 @@
+useEffect(() => {
+    getAnswer();
+}, []);
+
+
+
+const getAnswer = async () => {
+    try {
+      let response = await axios.get('http://node.abundancetacc.com/list-crypto/market-data/BTCUSDT');
+    setData(response.data.data);
+    } catch (err){
+        console.error(err);
+    }
+};

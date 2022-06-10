@@ -1,0 +1,18 @@
+ for(let [i, g] of Object.keys(data).entries()) {
+    console.log("rahul" + g);
+}
+
+===========================
+
+ const rahul1= Object.keys(data).forEach(key => {
+ 
+
+data[key].forEach((number, index) => {
+  if(number["symbol"]==userInput.s){
+  number["price"]=userInput.c;  
+    number["change"]=userInput.P; 
+  } 
+     
+});
+  
+});

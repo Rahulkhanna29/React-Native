@@ -1,0 +1,69 @@
+const [move, setMove] = useState(true);
+<Button onPress={()=>setMove(true)} />
+<View>
+ {
+ move ?
+ <Text style={{ right: 0, position: 'absolute', color: 'orange' }}>Done</Text> : null
+}
+</View>
+
+===================================
+const [state, setState]=useState({
+        icon: "eye-slash",
+        password: true
+        });
+
+const onIcon=()=>{
+    let iconName =(state.password) ? 'eye-slash' : 'eye';
+
+
+setState({
+    password: !state.password,
+    icon:iconName
+});
+
+}
+
+             <View style={{ width: wp(90), borderRadius: wp(2),marginTop:hp(1)}}>
+                            <Text onPress={() => navigation.navigate('Account1')} style={{ fontWeight: 'bold', color: 'black' }}>New Password</Text>
+                            <View style={{flexDirection:'row',alignItems:'center', }}>
+             <TextInput placeholder='Old Password' placeholderTextColor="grey" 
+               style={{backgroundColor:'#ffd9b8', borderRadius:wp(2),width: wp(80)}}
+             secureTextEntry={state.password}
+            
+        
+            > </TextInput>
+             
+                 <Icon
+                 onPress={() =>onIcon()}
+style={{alignSelf:'center', marginLeft:wp(2)}}
+          name={state.icon}
+          size={20}
+          color="black"
+        //   onPress={() => {setHidePass(prev=>!prev)}}
+        />
+           </View>
+
+
+
+2 way====================================================
+
+ const [hidePass, setHidePass] = useState(true);
+<View style={{ width: wp(90), borderRadius: wp(2),}}>
+                            <Text onPress={() => navigation.navigate('Account1')} style={{ fontWeight: 'bold', color: 'black' }}>Old Password</Text>
+                            <View style={{flexDirection:'row',alignItems:'center', }}>
+             <TextInput placeholder='Old Password' placeholderTextColor="grey"
+               style={{backgroundColor:'#ffd9b8', borderRadius:wp(2),width: wp(80)}}
+             secureTextEntry={hidePass}
+            > </TextInput>
+             
+                 <Icon
+style={{alignSelf:'center', marginLeft:wp(2)}}
+          name={hidePass ? 'eye-slash' : 'eye'}
+          size={20}
+          color="black"
+          onPress={() => {setHidePass(prev=>!prev)}}
+        />
+           </View>
+                          
+                        </View>

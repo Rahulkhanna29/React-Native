@@ -1,0 +1,15 @@
+const obj = {
+  country: 'Chile',
+  city: 'Santiago',
+  address: 'Example',
+};
+
+Object.keys(obj).forEach(key => {
+  obj[key] = '';
+});
+
+// 👇️ {country: '', city: '', address: ''}
+console.log(obj);
+
+
+https://bobbyhadz.com/blog/javascript-update-all-values-in-object

@@ -1,0 +1,17 @@
+  <View style={{ marginTop:hp(2), height: hp(6) ,width:wp(90), backgroundColor:'#ffd9b8',  borderRadius:5,   flexDirection:'row', alignSelf:'center', alignItems:'center',
+   
+   position: 'absolute',
+   bottom: 1,top:hp(60)}}>
+ <Image source={require('../Assets/percentage.png')} style={{alignSelf:'center', marginLeft:wp(2), width:wp(6), height:hp(3)}}></Image>
+
+<Text style={{fontWeight:'bold',marginLeft:wp(1), color:'orange', fontSize:11}}>0% Deposit Fee on Bank Transfer For Rs 3,000 & Above</Text>
+
+                           </View>
+                           <View style={{width:wp(90), height:hp(20),  position: 'absolute',
+    bottom: 1,top:hp(68), alignSelf:'center'}}>
+                            <TouchableOpacity  onPress = {()=>navigation.navigate('Help')} style={{ marginTop:hp(2), height: hp(6) ,width:wp(90), backgroundColor:'#e8a121', borderRadius:5,  justifyContent:'center', flexDirection:'row', alignSelf:'center', alignItems:'center', 
+   
+ }}>
+<Text style={{fontWeight:'bold',marginLeft:wp(1), color:'white'}}>Continue To Pay</Text>
+                            </TouchableOpacity>
+                            </View>

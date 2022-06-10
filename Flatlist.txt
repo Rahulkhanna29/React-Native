@@ -1,0 +1,6 @@
+<FlatList  
+    data={data}
+    renderItem={({item})=>{
+        return()
+    }}
+/>

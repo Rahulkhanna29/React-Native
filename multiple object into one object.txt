@@ -1,0 +1,22 @@
+ [{"USDT": "USDT"}, {"BTC": "BTC"}, {"BNB": "BNB"}, {"INR": "INR"}] into this
+ {"BNB": "BNB", "BTC": "BTC", "INR": "INR", "USDT": "USDT"}
+
+
+
+const upperarray=[];
+  const khanna= Object.keys(coins["data"]);
+
+  for (let hi = 0; hi <  Object.keys(coins["data"]).length; hi++) {
+    const newItem1 = {
+ [khanna[hi]] : khanna[hi],
+    };
+    upperarray.push(newItem1);
+
+
+}
+ console.log(upperarray)
+const rahul =upperarray.reduce(function(result, current) {
+    return Object.assign(result, current);
+  }, {});
+
+console.log(rahul);

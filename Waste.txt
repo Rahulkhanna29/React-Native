@@ -1,0 +1,2228 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
+
+
+// // import React, { useEffect, useState } from 'react';
+// // import { View, Text, Image, TouchableOpacity, document,
+// // TextInput } from 'react-native';
+// // import { FlatList } from 'react-native-gesture-handler';
+// // import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// // import styles from '../StyleSheet';
+// // import Modal from "react-native-modal";
+// // import HashMap from 'hashmap';
+
+// // const USDT = () => {
+
+
+
+// //     // const pricesWs = new WebSocket('wss://stream.binance.com:9443/ws');
+// //     // pricesWs.onopen = () => {
+// //     //         // console.log('connect');
+// //     // pricesWs.send(
+// //     //           JSON.stringify({
+
+// //     //               "method": "SUBSCRIBE",
+// //     //               "params":
+// //     //               [
+// //     //               "dogeusdt@ticker",
+// //     //              "xrpusdt@ticker",
+// //     //              "bnbusdt@ticker",
+// //     //              "cakeusdt@ticker",
+// //     //              "maticusdt@ticker",
+// //     //              "trxusdt@ticker",
+// //     //              "ltcusdt@ticker",
+// //     //              "ethbtc@ticker",
+// //     //              "1inchusdt@ticker",
+// //     //              "wrxusdt@ticker",
+// //     //              "dotusdt@ticker",
+// //     //              "solusdt@ticker",
+// //     //              "xrpbtc@ticker",
+// //     //              "dogebtc@ticker",
+// //     //              "maticbtc@ticker",
+// //     //              "trxbtc@ticker",
+// //     //              "solbtc@ticker",
+// //     //              "bnbbtc@ticker",
+// //     //              "1inchbtc@ticker",
+// //     //              "wrxbtc@ticker",
+// //     //              "ltcbtc@ticker",
+// //     //              "adabtc@ticker",
+// //     //              "unibtc@ticker",
+// //     //              "cakebtc@ticker",
+// //     //              "neobtc@ticker",
+// //     //              "dotbtc@ticker",
+// //     //              "adausdt@ticker",
+// //     //              "shibusdt@ticker",
+// //     //              "uniusdt@ticker",
+// //     //              "neousdt@ticker",
+// //     //              "xrpbnb@ticker",
+// //     //              "maticbnb@ticker",
+// //     //              "trxbnb@ticker",
+// //     //              "solbnb@ticker",
+// //     //              "wrxbnb@ticker",
+// //     //              "ltcbnb@ticker",
+// //     //              "adabnb@ticker",
+// //     //              "dotbnb@ticker",
+// //     //              "cakebnb@ticker",
+// //     //              "neobnb@ticker",
+// //     //              "btcinr@ticker",
+// //     //              "ethinr@ticker",
+// //     //              "xrpinr@ticker",
+// //     //              "dogeinr@ticker",
+// //     //              "bnbinr@ticker",
+// //     //              "cakeinr@ticker",
+// //     //              "maticinr@ticker",
+// //     //              "trxinr@ticker",
+// //     //              "ltcinr@ticker",
+// //     //              "1inchinr@ticker",
+// //     //              "wrxinr@ticker",
+// //     //              "dotinr@ticker",
+// //     //              "solinr@ticker",
+// //     //              "adainr@ticker",
+// //     //              "shibinr@ticker",
+// //     //              "uniinr@ticker",
+// //     //              "neoinr@ticker",
+// //     //              "btcusdt@ticker",
+// //     //              "ethusdt@ticker",
+// //     //              "lunausdt@ticker",
+// //     //              "ftmusdt@ticker",
+// //     //              "icpusdt@ticker"
+// //     //               ],
+// //     //               "id": 1
+
+// //     //           })
+
+// //     //         )
+// //     // }
+
+// //     // pricesWs.onmessage = function (msg) {
+// //     //  let stock=JSON.parse(msg.data);
+// //     // //  setData(stock.P)
+// //     // setUserInput(stock.P)
+// //     // // console.log(stock.s)
+// //     // // setData1(stock.s)
+// //     // // console.log(stock)
+// //     // }
+
+// // var cryptodata=[
+// //     {
+// //         "USDT":[{"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"}],
+
+
+
+// //     "BTC":[{"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"}]
+
+
+// // }
+// // ];
+
+
+
+// // var finallist=[];
+
+
+
+// //     const [isLoading, setLoading] = useState(true);
+// //   const [userInput,setUserInput] = useState();
+
+// //   const [data, setData] = useState([]);
+// // //   console.log(data);
+
+// //   useEffect(() => {
+
+// //      CryptoAPI();
+
+// //     // filldata();
+
+// //   },[]);
+
+
+// //   const CryptoAPI=()=>{
+// //   fetch("http://node.finexchanges.com/list-crypto/get")
+// //       .then((response) => response.json())
+// //       .then((json) => setData(json))
+// //       .catch((error) => console.error(error))
+// //       .finally(() => setLoading(false));
+
+
+// //   }
+
+// // //   const filldata=()=>{
+// // // alert(data)
+// // //   }
+
+// // const fixedData=
+// //  {
+// //     // "image":"",
+// //     name:"Ripple",
+// //     currency:"XRP",
+// //    price:"15.23",
+// //     changes:"0.25",
+// //     high:"25.00",
+// //     low:"10.00",
+// //     volume:"12"
+// // };
+
+
+
+
+// // var map = new HashMap();
+
+// // List<Map<String,dynamic>> map=new Map();
+
+
+// // const count = Object.keys(data).length;
+// // for (let index = 0; index <count; index++) {
+
+
+// //     map.set( Object.keys(data.data)[index],Object.values(data.data)[index])
+
+// // }
+// // map.forEach(function(value, key) {
+// //     console.log(key + " : " + value);
+// // });
+
+
+// //   const [isModalVisible, setModalVisible] = useState(false);
+
+// //     const toggleModal = () => {
+// //         setModalVisible(!isModalVisible);
+// //     };
+
+// //     // const array=[userInput]
+
+// //     // const list = () => {
+// //     //         return array.map((element) => {
+// //     //           return (
+// //     //             <View >
+// //     //               <Text>{element}</Text>
+// //     //               {/* <Text>{element.subtitle}</Text> */}
+// //     //             </View>
+// //     //           );
+// //     //         });
+// //     //       };
+
+// // // const array=[userInput]
+// // // const buttonsListArr = [];
+
+// // // for (let i = 0; i < array.length[data.tickers === array.s]; i++)
+// // // {
+// // //  buttonsListArr.push(
+// // //     //  console.log(array)
+// // //  <Text  style={styles.CoinText}>{array}</Text>
+
+// // //  );
+// // // }
+
+
+// // // const playerInfo = [
+// // //     {PlayerID: 123, PhotoURL: 'url123'},
+// // //     {PlayerID: 345, PhotoURL: 'url345'},
+// // //     {PlayerID: 678, PhotoURL: 'url678'},
+// // //     {PlayerID: 910, PhotoURL: 'url910'},
+// // //     {PlayerID: 1112, PhotoURL: "url1112"},
+// // //     {PlayerID: 1213, PhotoURL: "url1213"}
+// // //    ];
+// // //   // socket
+
+
+// // //   const playerIDs = [123, 345, 678, 910]
+// // //   // ticker api
+// // // const tick=[data.tickers]
+// // // const sock=[userInput]
+
+// // // // let leaderPhotos = sock.filter((info) => tick.includes(info)).map(id => id);
+// // // let leaderPhotos = playerInfo.filter((info) => playerIDs.includes(info.PlayerID)).map(id => id.PhotoURL);
+
+
+// //     return (
+// //         <View style={styles.main}>
+// //             <View style={styles.top}>
+// //                 <Text style={styles.CoinText}>Coin Name</Text>
+// //                 <View style={{ flexDirection: 'row' }}>
+// //                     <Text style={styles.CoinText1}>Price</Text>
+// //                     <Image style={styles.img1} source={require('../Assets/arrow-up.png')}></Image>
+// //                 </View>
+// //                 <Text style={styles.CoinText}>24H Change</Text>
+
+// //             </View>
+// //             <View style={styles.line}></View>
+
+
+// //             <View>
+// //                 <Modal isVisible={isModalVisible}>
+// //                     <View style={styles.modalView}>
+// //                         <View style={styles.modalView1}>
+// //                             <View style={styles.row}>
+// //                                 <Image style={styles.lighticon1} source={require('../Assets/bitcoin.png')} />
+// //                                 <Text style={styles.LiveText}>Bitcoin Coin</Text>
+// //                             </View>
+// //                             <View style={styles.row1}>
+// //                                 <View>
+// //                                     <Image style={styles.img2} source={require('../Assets/Plus.png')}></Image>
+// //                                     <Text style={{ fontSize: 10 }}>Price Alert</Text>
+
+// //                                 </View>
+// //                                 <View >
+// //                                     <TouchableOpacity onPress={toggleModal}>
+// //                                         <Image style={styles.img3} source={require('../Assets/cross.png')}></Image>
+// //                                         <Text style={{ fontSize: 10 }}>Cancel</Text>
+// //                                     </TouchableOpacity>
+// //                                 </View>
+// //                             </View>
+// //                         </View>
+// //                         <View style={styles.line}></View>
+// //                         <View style={styles.bottomView}>
+// //                             <Text style={styles.LiveText}>Rs.29,120.87</Text>
+// //                             <View style={{ flexDirection: 'row' }}>
+// //                                 <Image style={styles.img4} source={require('../Assets/top.png')}></Image>
+// //                                 <Text style={styles.Modal}>+13.41%</Text>
+// //                                 <Text style={styles.ModalText1}>[+1,481,46]</Text>
+// //                             </View>
+// //                         </View>
+// //                         <TouchableOpacity onPress={toggleModal} style={[styles.btnModal, { backgroundColor: 'green' }]}>
+// //                             <Text style={styles.LiveTextper}>BUY</Text>
+
+// //                         </TouchableOpacity>
+// //                         <View style={styles.lastView}>
+// //                             <Text style={styles.ModalText2}>view price chart & details</Text>
+// //                             <Image style={styles.img5} source={require('../Assets/right.png')}></Image>
+// //                         </View>
+// //                     </View>
+// //                 </Modal>
+// //             </View>
+
+
+// //             <View style={{ width: wp(98), alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', marginTop: hp(1) }}>
+// //                 <FlatList
+// //                  showsVerticalScrollIndicator={false}
+// //                     // data={cryptodata[0]["USDT"]}
+// // // data={data?.tickers}
+// // // data={data}
+// // // data={data1}
+// // // data={condition()}
+// //  data={data.data?.USDT}
+// // // data={cryptodata}
+// //                     renderItem={({ item, index}) => {
+// //                         // console.log(item?.USDT[0].name);
+// //                         return (
+// //                             <View>
+// //                                 <View style={styles.CoinView}>
+// //                                     <View style={{ flexDirection: 'row' }}>
+// //                                         <Image style={styles.lighticon1} source={{uri:item.image}} />
+// //                                         <View style={styles.vertical}>
+// //                                             {/* <Text style={styles.LiveText}>{item?.USDT[0].name}</Text> */}
+// //                                             <Text style={styles.LiveText}>{item.name}</Text>
+// //                                             <Text style={styles.LiveText1}>{item.currency}</Text>
+// //                                         </View>
+// //                                     </View>
+// //                                     {/* <Text style={[styles.PricesText,{color:item.price >0 ? 'green' :'red'}]}>{item.s}</Text> */}
+
+// //                                     {/* <TextInput
+// //                                     // style={[styles.PricesText,{color:pricesWs.c > 0 ? 'green' :'red'}]}
+// //         value = {userInput}
+// //         onTextChange = {(text) => setUserInput(text)} />  */}
+
+// // {/* <Text>
+// // {leaderPhotos}</Text> */}
+
+
+
+// //                                     <TouchableOpacity onPress={toggleModal} style={[styles.btnLive, { backgroundColor: item.change> 0 ? 'green' :'red' }]}>
+// //                                         <Text style={styles.LiveTextper}>{item.change}%</Text>
+// //                                     </TouchableOpacity>
+
+// //                                 </View>
+// //                                 <View style={{ backgroundColor: '#e8a121', height: hp(.2) }}></View>
+
+// //                             </View>
+// //                         );
+// //                     }}
+// //                 />
+
+// //             </View>
+
+// //         </View>
+// //     );
+// // }
+// // export default USDT;
+
+
+// // import React, { useEffect, useState } from 'react';
+// // import { View, Text, Image, TouchableOpacity, document,
+// // TextInput } from 'react-native';
+// // import { FlatList } from 'react-native-gesture-handler';
+// // import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// // import styles from '../StyleSheet';
+// // import Modal from "react-native-modal";
+// // import HashMap from 'hashmap';
+
+// // const USDT = () => {
+
+
+
+// //     const pricesWs = new WebSocket('wss://stream.binance.com:9443/ws');
+// //     pricesWs.onopen = () => {
+// //             // console.log('connect');
+// //     pricesWs.send(
+// //               JSON.stringify({
+
+// //                   "method": "SUBSCRIBE",
+// //                   "params":
+// //                   [
+// //                   "dogeusdt@ticker",
+// //                  "xrpusdt@ticker",
+// //                  "bnbusdt@ticker",
+// //                  "cakeusdt@ticker",
+// //                  "maticusdt@ticker",
+// //                  "trxusdt@ticker",
+// //                  "ltcusdt@ticker",
+// //                  "ethbtc@ticker",
+// //                  "1inchusdt@ticker",
+// //                  "wrxusdt@ticker",
+// //                  "dotusdt@ticker",
+// //                  "solusdt@ticker",
+// //                  "xrpbtc@ticker",
+// //                  "dogebtc@ticker",
+// //                  "maticbtc@ticker",
+// //                  "trxbtc@ticker",
+// //                  "solbtc@ticker",
+// //                  "bnbbtc@ticker",
+// //                  "1inchbtc@ticker",
+// //                  "wrxbtc@ticker",
+// //                  "ltcbtc@ticker",
+// //                  "adabtc@ticker",
+// //                  "unibtc@ticker",
+// //                  "cakebtc@ticker",
+// //                  "neobtc@ticker",
+// //                  "dotbtc@ticker",
+// //                  "adausdt@ticker",
+// //                  "shibusdt@ticker",
+// //                  "uniusdt@ticker",
+// //                  "neousdt@ticker",
+// //                  "xrpbnb@ticker",
+// //                  "maticbnb@ticker",
+// //                  "trxbnb@ticker",
+// //                  "solbnb@ticker",
+// //                  "wrxbnb@ticker",
+// //                  "ltcbnb@ticker",
+// //                  "adabnb@ticker",
+// //                  "dotbnb@ticker",
+// //                  "cakebnb@ticker",
+// //                  "neobnb@ticker",
+// //                  "btcinr@ticker",
+// //                  "ethinr@ticker",
+// //                  "xrpinr@ticker",
+// //                  "dogeinr@ticker",
+// //                  "bnbinr@ticker",
+// //                  "cakeinr@ticker",
+// //                  "maticinr@ticker",
+// //                  "trxinr@ticker",
+// //                  "ltcinr@ticker",
+// //                  "1inchinr@ticker",
+// //                  "wrxinr@ticker",
+// //                  "dotinr@ticker",
+// //                  "solinr@ticker",
+// //                  "adainr@ticker",
+// //                  "shibinr@ticker",
+// //                  "uniinr@ticker",
+// //                  "neoinr@ticker",
+// //                  "btcusdt@ticker",
+// //                  "ethusdt@ticker",
+// //                  "lunausdt@ticker",
+// //                  "ftmusdt@ticker",
+// //                  "icpusdt@ticker"
+// //                   ],
+// //                   "id": 1
+
+// //               })
+
+// //             )
+// //     }
+
+// //     pricesWs.onmessage = function (msg) {
+// //      let stock=JSON.parse(msg.data);
+// //     //  setData(stock.P)
+// //     setUserInput(stock.P)
+// //     // console.log(stock.s)
+// //     // setData1(stock.s)
+// //     // console.log(stock)
+// //     }
+
+// // var cryptodata=[
+// //     {
+// //         "USDT":[{"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"}],
+
+
+
+// //     "BTC":[{"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"},
+// //     {"image":"","name":"Ripple","currency":"XRP","price":"15.23","changes":"0.25","high":"25.00","low":"10.00","volume":"12"}]
+
+
+// // }
+// // ];
+
+
+
+// // var finallist=[];
+
+// // var responsedata={  "data": {
+// //         "USDT": [
+// //             {
+// //                 "image": "http://demo.finexchanges.com/backend/public/currency_images/xrp.png",
+// //                 "symbol": "XRPUSDT",
+// //                 "flag": "0",
+// //                 "listed": false,
+// //                 "id": 3,
+// //                 "name": "Ripple",
+// //                 "currency": "XRP",
+// //                 "pair_with": "USDT",
+// //                 "decimal_currency": "1",
+// //                 "decimal_pair": "5",
+// //                 "buy_desc": "",
+// //                 "sell_desc": "",
+// //                 "created_at": "2022-02-28T15:29:22.000Z",
+// //                 "updated_at": "2022-03-29T00:23:11.000Z",
+// //                 "price": "0.60970000",
+// //                 "change": "-5.41",
+// //                 "volume": "478484967.00000000",
+// //                 "high": "0.64630000",
+// //                 "low": "0.58010000"
+// //             },
+// //             {
+// //                 "image": "http://demo.finexchanges.com/backend/public/currency_images/doge.png",
+// //                 "symbol": "DOGEUSDT",
+// //                 "flag": "0",
+// //                 "listed": false,
+// //                 "id": 4,
+// //                 "name": "Dogecoin",
+// //                 "currency": "DOGE",
+// //                 "pair_with": "USDT",
+// //                 "decimal_currency": "0",
+// //                 "decimal_pair": "7",
+// //                 "buy_desc": "",
+// //                 "sell_desc": "",
+// //                 "created_at": "2022-02-28T15:29:22.000Z",
+// //                 "updated_at": "2022-03-04T18:54:35.000Z",
+// //                 "price": "0.12930000",
+// //                 "change": "-4.08",
+// //                 "volume": "1602922710.00000000",
+// //                 "high": "0.13750000",
+// //                 "low": "0.12500000"
+// //             },
+// //             {
+// //                 "image": "http://demo.finexchanges.com/backend/public/currency_images/bnb.png",
+// //                 "symbol": "BNBUSDT",
+// //                 "flag": "0",
+// //                 "listed": false,
+// //                 "id": 5,
+// //                 "name": "Binance",
+// //                 "currency": "BNB",
+// //                 "pair_with": "USDT",
+// //                 "decimal_currency": "3",
+// //                 "decimal_pair": "4",
+// //                 "buy_desc": "",
+// //                 "sell_desc": "",
+// //                 "created_at": "2022-02-28T15:29:22.000Z",
+// //                 "updated_at": "2022-03-04T18:54:39.000Z",
+// //                 "price": "378.60000000",
+// //                 "change": "-5.84",
+// //                 "volume": "1248505.88300000",
+// //                 "high": "413.60000000",
+// //                 "low": "370.70000000"
+// //             },
+// //             {
+// //                 "image": "http://demo.finexchanges.com/backend/public/currency_images/cake.png",
+// //                 "symbol": "CAKEUSDT",
+// //                 "flag": "0",
+// //                 "listed": false,
+// //                 "id": 6,
+// //                 "name": "PancakeSwap",
+// //                 "currency": "CAKE",
+// //                 "pair_with": "USDT",
+// //                 "decimal_currency": "3",
+// //                 "decimal_pair": "3",
+// //                 "buy_desc": "",
+// //                 "sell_desc": "",
+// //                 "created_at": "2022-02-28T15:29:22.000Z",
+// //                 "updated_at": "2022-03-04T18:55:23.000Z",
+// //                 "price": "7.44500000",
+// //                 "change": "-4.59",
+// //                 "volume": "3730426.59000000",
+// //                 "high": "7.94400000",
+// //                 "low": "7.23800000"
+// //             },
+// //         ]
+// //   }}
+
+// //     const [isLoading, setLoading] = useState(true);
+// //   const [userInput,setUserInput] = useState();
+// //   const [online, setonline] = useState();
+
+// //   const [data, setData] = useState([]);
+// // //   console.log(data);
+
+// //   useEffect(() => {
+
+// //     CryptoAPI();
+
+// //     // filldata();
+
+// //   },[]);
+
+
+// //   const CryptoAPI=()=>{
+// //   fetch("http://node.finexchanges.com/list-crypto/get")
+// //       .then((response) => response.json())
+// //       .then((json) => setData(json))
+// //       .catch((error) => console.error(error))
+// //       .finally(() => setLoading(false));
+
+
+// //   }
+
+// // //   const filldata=()=>{
+// // // alert(data)
+// // //   }
+// // var map=new HashMap();
+
+// // const rahul= Object.keys(responsedata["data"]).forEach(key => {
+
+// // responsedata["data"][key].forEach((number, index) => {
+// //   if(number["symbol"]=="BNBUSDT"){
+// //     number["flag"]=userInput;
+// // //  console.log(number);
+// // // setonline(number);
+// //   }
+
+// // });
+
+
+// // });
+
+// // // map.forEach((responsedata["data"]["USDT"])=>{
+// // //  console.log()
+
+// // // });
+
+
+
+// // // const rahul1= Object.keys(responsedata["data"]["USDT"]).forEach(key => {
+
+// // // if(responsedata["data"]["USDT"][0]["symbol"]=="XRPUSDT"){
+// // //  console.log(key,responsedata["data"]["USDT"][0]["symbol"]);
+// // // }else{
+// // //  console.log(key,responsedata["data"]["USDT"][1]["symbol"]);
+
+// // // }
+// // // });
+// // // console.log(Object.keys(map.get("USDT")[0]))
+// // // console.log(map.get("USDT")[0]["symbol"]);
+// // // console.log(Object.values(map.get("USDT")[0]))
+
+
+
+// // // const count = Object.keys(data).length;
+// // // for (let index = 0; index <count; index++) {
+// // //     // console.log(Object.values(0data.data)[index]) ;
+
+
+// // //     map.set( Object.keys(data.data)[index],Object.values(data.data?.USDT))
+
+// // // }
+// // // map.forEach(function(values, keys) {
+// // //     console.log(keys + " : " + values);
+// // // });
+
+// //   const [isModalVisible, setModalVisible] = useState(false);
+
+// //     const toggleModal = () => {
+// //         setModalVisible(!isModalVisible);
+// //     };
+
+// //     // const array=[userInput]
+
+// //     // const list = () => {
+// //     //         return array.map((element) => {
+// //     //           return (
+// //     //             <View >
+// //     //               <Text>{element}</Text>
+// //     //               {/* <Text>{element.subtitle}</Text> */}
+// //     //             </View>
+// //     //           );
+// //     //         });
+// //     //       };
+
+// // // const array=[userInput]
+// // // const buttonsListArr = [];
+
+// // // for (let i = 0; i < array.length[data.tickers === array.s]; i++)
+// // // {
+// // //  buttonsListArr.push(
+// // //     //  console.log(array)
+// // //  <Text  style={styles.CoinText}>{array}</Text>
+
+// // //  );
+// // // }
+
+
+// // // const playerInfo = [
+// // //     {PlayerID: 123, PhotoURL: 'url123'},
+// // //     {PlayerID: 345, PhotoURL: 'url345'},
+// // //     {PlayerID: 678, PhotoURL: 'url678'},
+// // //     {PlayerID: 910, PhotoURL: 'url910'},
+// // //     {PlayerID: 1112, PhotoURL: "url1112"},
+// // //     {PlayerID: 1213, PhotoURL: "url1213"}
+// // //    ];
+// // //   // socket
+
+
+// // //   const playerIDs = [123, 345, 678, 910]
+// // //   // ticker api
+// // // const tick=[data.tickers]
+// // // const sock=[userInput]
+
+// // // // let leaderPhotos = sock.filter((info) => tick.includes(info)).map(id => id);
+// // // let leaderPhotos = playerInfo.filter((info) => playerIDs.includes(info.PlayerID)).map(id => id.PhotoURL);
+
+
+// //     return (
+// //         <View style={styles.main}>
+// //             <View style={styles.top}>
+// //                 <Text style={styles.CoinText}>Coin Name</Text>
+// //                 <View style={{ flexDirection: 'row' }}>
+// //                     <Text style={styles.CoinText1}>Price</Text>
+// //                     <Image style={styles.img1} source={require('../Assets/arrow-up.png')}></Image>
+// //                 </View>
+// //                 <Text style={styles.CoinText}>24H Change</Text>
+
+// //             </View>
+// //             <View style={styles.line}></View>
+
+
+// //             <View>
+// //                 <Modal isVisible={isModalVisible}>
+// //                     <View style={styles.modalView}>
+// //                         <View style={styles.modalView1}>
+// //                             <View style={styles.row}>
+// //                                 <Image style={styles.lighticon1} source={require('../Assets/bitcoin.png')} />
+// //                                 <Text style={styles.LiveText}>Bitcoin Coin</Text>
+// //                             </View>
+// //                             <View style={styles.row1}>
+// //                                 <View>
+// //                                     <Image style={styles.img2} source={require('../Assets/Plus.png')}></Image>
+// //                                     <Text style={{ fontSize: 10 }}>Price Alert</Text>
+
+// //                                 </View>
+// //                                 <View >
+// //                                     <TouchableOpacity onPress={toggleModal}>
+// //                                         <Image style={styles.img3} source={require('../Assets/cross.png')}></Image>
+// //                                         <Text style={{ fontSize: 10 }}>Cancel</Text>
+// //                                     </TouchableOpacity>
+// //                                 </View>
+// //                             </View>
+// //                         </View>
+// //                         <View style={styles.line}></View>
+// //                         <View style={styles.bottomView}>
+// //                             <Text style={styles.LiveText}>Rs.29,120.87</Text>
+// //                             <View style={{ flexDirection: 'row' }}>
+// //                                 <Image style={styles.img4} source={require('../Assets/top.png')}></Image>
+// //                                 <Text style={styles.Modal}>+13.41%</Text>
+// //                                 <Text style={styles.ModalText1}>[+1,481,46]</Text>
+// //                             </View>
+// //                         </View>
+// //                         <TouchableOpacity onPress={toggleModal} style={[styles.btnModal, { backgroundColor: 'green' }]}>
+// //                             <Text style={styles.LiveTextper}>BUY</Text>
+
+// //                         </TouchableOpacity>
+// //                         <View style={styles.lastView}>
+// //                             <Text style={styles.ModalText2}>view price chart & details</Text>
+// //                             <Image style={styles.img5} source={require('../Assets/right.png')}></Image>
+// //                         </View>
+// //                     </View>
+// //                 </Modal>
+// //             </View>
+
+
+// //             <View style={{ width: wp(98), alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', marginTop: hp(1) }}>
+// //                 <FlatList
+// //                  showsVerticalScrollIndicator={false}
+// //                     // data={cryptodata[0]["USDT"]}
+// // // data={data?.tickers}
+// // // data={data}
+// // // data={data1}
+// // // data={condition()}
+// // //   data={data.data?.USDT}
+// // data={responsedata.data?.USDT}
+// //                     renderItem={({ item, index}) => {
+// //                         // console.log(item?.USDT[0].name);
+// //                         return (
+// //                             <View>
+// //                                 <View style={styles.CoinView}>
+// //                                     <View style={{ flexDirection: 'row' }}>
+// //                                         <Image style={styles.lighticon1} source={{uri:item.image}} />
+// //                                         <View style={styles.vertical}>
+// //                                             {/* <Text style={styles.LiveText}>{item?.USDT[0].name}</Text> */}
+// //                                             <Text style={styles.LiveText}>{item.name}</Text>
+// //                                             <Text style={styles.LiveText1}>{item.currency}</Text>
+// //                                         </View>
+// //                                     </View>
+// //                            <Text style={[styles.PricesText,{color:item.price >0 ? 'green' :'red'}]}>{item.price}</Text>
+
+// //                                     {/* <TextInput
+// //                                     // style={[styles.PricesText,{color:pricesWs.c > 0 ? 'green' :'red'}]}
+// //         value = {userInput}
+// //         onTextChange = {(text) => setUserInput(text)} />  */}
+
+// // {/* <Text>
+// // {leaderPhotos}</Text> */}
+
+
+
+// //                                     <TouchableOpacity onPress={toggleModal} style={[styles.btnLive, { backgroundColor: item.change> 0 ? 'green' :'red' }]}>
+// //                                         <Text style={styles.LiveTextper}>{item.change}%</Text>
+// //                                     </TouchableOpacity>
+
+// //                                 </View>
+// //                                 <View style={{ backgroundColor: '#e8a121', height: hp(.2) }}></View>
+
+// //                             </View>
+// //                         );
+// //                     }}
+// //                 />
+
+// //             </View>
+
+// //         </View>
+// //     );
+// // }
+// // export default USDT;
+
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+// import { View, Text, Image, TouchableOpacity, document,
+// TextInput } from 'react-native';
+// import { FlatList } from 'react-native-gesture-handler';
+// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// import styles from '../StyleSheet';
+// import Modal from "react-native-modal";
+// import HashMap from 'hashmap';
+// import Axios from 'axios';
+
+// const USDT = () => {
+
+
+
+//     const pricesWs = new WebSocket('wss://stream.binance.com:9443/ws');
+//     pricesWs.onopen = () => {
+//             console.log('connect');
+//     pricesWs.send(
+//               JSON.stringify({
+
+//                   "method": "SUBSCRIBE",
+//                   "params":
+//                   [
+//                  "dogeusdt@ticker",
+//               "xrpusdt@ticker",
+//                  "bnbusdt@ticker",
+//                  "cakeusdt@ticker",
+//                  "maticusdt@ticker",
+//                  "trxusdt@ticker",
+//                  "ltcusdt@ticker",
+//                  "ethbtc@ticker",
+//                  "1inchusdt@ticker",
+//                  "wrxusdt@ticker",
+//                  "dotusdt@ticker",
+//                  "solusdt@ticker",
+//                  "xrpbtc@ticker",
+//                  "dogebtc@ticker",
+//                  "maticbtc@ticker",
+//                  "trxbtc@ticker",
+//                  "solbtc@ticker",
+//                  "bnbbtc@ticker",
+//                  "1inchbtc@ticker",
+//                  "wrxbtc@ticker",
+//                  "ltcbtc@ticker",
+//                  "adabtc@ticker",
+//                  "unibtc@ticker",
+//                  "cakebtc@ticker",
+//                  "neobtc@ticker",
+//                  "dotbtc@ticker",
+//                  "adausdt@ticker",
+//                  "shibusdt@ticker",
+//                  "uniusdt@ticker",
+//                  "neousdt@ticker",
+//                  "xrpbnb@ticker",
+//                  "maticbnb@ticker",
+//                  "trxbnb@ticker",
+//                  "solbnb@ticker",
+//                  "wrxbnb@ticker",
+//                  "ltcbnb@ticker",
+//                  "adabnb@ticker",
+//                  "dotbnb@ticker",
+//                  "cakebnb@ticker",
+//                  "neobnb@ticker",
+//                  "btcinr@ticker",
+//                  "ethinr@ticker",
+//                  "xrpinr@ticker",
+//                  "dogeinr@ticker",
+//                  "bnbinr@ticker",
+//                  "cakeinr@ticker",
+//                  "maticinr@ticker",
+//                  "trxinr@ticker",
+//                  "ltcinr@ticker",
+//                  "1inchinr@ticker",
+//                  "wrxinr@ticker",
+//                  "dotinr@ticker",
+//                  "solinr@ticker",
+//                  "adainr@ticker",
+//                  "shibinr@ticker",
+//                  "uniinr@ticker",
+//                  "neoinr@ticker",
+//                  "btcusdt@ticker",
+//                  "ethusdt@ticker",
+//                  "lunausdt@ticker",
+//                  "ftmusdt@ticker",
+//                  "icpusdt@ticker"
+//                   ],
+//                   "id": 1
+
+//               })
+
+//             )
+//     }
+
+//     pricesWs.onmessage = function (msg) {
+// //  console.log(msg);
+//   let stock=JSON.parse(msg.data);
+// // setUserInput(msg)
+// setUserInput(stock)
+// setTimeout(() => {
+//     pricesWs.send( JSON.stringify({
+
+//         "method": "SUBSCRIBE",
+//         "params":
+//         [
+//        "dogeusdt@ticker",
+//     "xrpusdt@ticker",
+//        "bnbusdt@ticker",
+//        "cakeusdt@ticker",
+//        "maticusdt@ticker",
+//        "trxusdt@ticker",
+//        "ltcusdt@ticker",
+//        "ethbtc@ticker",
+//        "1inchusdt@ticker",
+//        "wrxusdt@ticker",
+//        "dotusdt@ticker",
+//        "solusdt@ticker",
+//        "xrpbtc@ticker",
+//        "dogebtc@ticker",
+//        "maticbtc@ticker",
+//        "trxbtc@ticker",
+//        "solbtc@ticker",
+//        "bnbbtc@ticker",
+//        "1inchbtc@ticker",
+//        "wrxbtc@ticker",
+//        "ltcbtc@ticker",
+//        "adabtc@ticker",
+//        "unibtc@ticker",
+//        "cakebtc@ticker",
+//        "neobtc@ticker",
+//        "dotbtc@ticker",
+//        "adausdt@ticker",
+//        "shibusdt@ticker",
+//        "uniusdt@ticker",
+//        "neousdt@ticker",
+//        "xrpbnb@ticker",
+//        "maticbnb@ticker",
+//        "trxbnb@ticker",
+//        "solbnb@ticker",
+//        "wrxbnb@ticker",
+//        "ltcbnb@ticker",
+//        "adabnb@ticker",
+//        "dotbnb@ticker",
+//        "cakebnb@ticker",
+//        "neobnb@ticker",
+//        "btcinr@ticker",
+//        "ethinr@ticker",
+//        "xrpinr@ticker",
+//        "dogeinr@ticker",
+//        "bnbinr@ticker",
+//        "cakeinr@ticker",
+//        "maticinr@ticker",
+//        "trxinr@ticker",
+//        "ltcinr@ticker",
+//        "1inchinr@ticker",
+//        "wrxinr@ticker",
+//        "dotinr@ticker",
+//        "solinr@ticker",
+//        "adainr@ticker",
+//        "shibinr@ticker",
+//        "uniinr@ticker",
+//        "neoinr@ticker",
+//        "btcusdt@ticker",
+//        "ethusdt@ticker",
+//        "lunausdt@ticker",
+//        "ftmusdt@ticker",
+//        "icpusdt@ticker"
+//         ],
+//         "id": 1
+
+//     }));
+// }, 3000);
+// // console.log(stock);
+// // const findIdByEmail = (stock, s) => {
+// //   const el = stock.filter(el => el.s === s);
+// //   return el && el.p;
+// // }
+// // Object.keys(stock).forEach(function(key) {
+// //     var value = stock[key];
+// //   //  console.log(key)
+// // });
+// // console.log(findIdByEmail(stock, "XRPUSDT"));
+//  }
+//  pricesWs.onerror = () => {
+//     // an error occurred
+//     console.log('message');
+//   };
+
+//   pricesWs.onclose = () => {
+//     // connection closed
+//     console.log('reason');
+//   };
+
+// var responsedata={  "data": {
+//         "USDT": [
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/xrp.png",
+//                 "symbol": "XRPUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 3,
+//                 "name": "Ripple",
+//                 "currency": "XRP",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "1",
+//                 "decimal_pair": "5",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-29T00:23:11.000Z",
+//                 "price": "0.60970000",
+//                 "change": "-5.41",
+//                 "volume": "478484967.00000000",
+//                 "high": "0.64630000",
+//                 "low": "0.58010000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/doge.png",
+//                 "symbol": "DOGEUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 4,
+//                 "name": "Dogecoin",
+//                 "currency": "DOGE",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "0",
+//                 "decimal_pair": "7",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:54:35.000Z",
+//                 "price": "0.12930000",
+//                 "change": "-4.08",
+//                 "volume": "1602922710.00000000",
+//                 "high": "0.13750000",
+//                 "low": "0.12500000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/bnb.png",
+//                 "symbol": "BNBUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 5,
+//                 "name": "Binance",
+//                 "currency": "BNB",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "3",
+//                 "decimal_pair": "4",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:54:39.000Z",
+//                 "price": "378.60000000",
+//                 "change": "-5.84",
+//                 "volume": "1248505.88300000",
+//                 "high": "413.60000000",
+//                 "low": "370.70000000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/cake.png",
+//                 "symbol": "CAKEUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 6,
+//                 "name": "PancakeSwap",
+//                 "currency": "CAKE",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "3",
+//                 "decimal_pair": "3",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:55:23.000Z",
+//                 "price": "7.44500000",
+//                 "change": "-4.59",
+//                 "volume": "3730426.59000000",
+//                 "high": "7.94400000",
+//                 "low": "7.23800000"
+//             },
+//         ],
+//          "RHL": [
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/xrp.png",
+//                 "symbol": "XRPUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 3,
+//                 "name": "Ripple",
+//                 "currency": "XRP",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "1",
+//                 "decimal_pair": "5",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-29T00:23:11.000Z",
+//                 "price": "0.60970000",
+//                 "change": "-5.41",
+//                 "volume": "478484967.00000000",
+//                 "high": "0.64630000",
+//                 "low": "0.58010000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/doge.png",
+//                 "symbol": "DOGEUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 4,
+//                 "name": "Dogecoin",
+//                 "currency": "DOGE",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "0",
+//                 "decimal_pair": "7",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:54:35.000Z",
+//                 "price": "0.12930000",
+//                 "change": "-4.08",
+//                 "volume": "1602922710.00000000",
+//                 "high": "0.13750000",
+//                 "low": "0.12500000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/bnb.png",
+//                 "symbol": "BNBUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 5,
+//                 "name": "Binance",
+//                 "currency": "BNB",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "3",
+//                 "decimal_pair": "4",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:54:39.000Z",
+//                 "price": "378.60000000",
+//                 "change": "-5.84",
+//                 "volume": "1248505.88300000",
+//                 "high": "413.60000000",
+//                 "low": "370.70000000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/cake.png",
+//                 "symbol": "CAKEUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 6,
+//                 "name": "PancakeSwap",
+//                 "currency": "CAKE",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "3",
+//                 "decimal_pair": "3",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:55:23.000Z",
+//                 "price": "7.44500000",
+//                 "change": "-4.59",
+//                 "volume": "3730426.59000000",
+//                 "high": "7.94400000",
+//                 "low": "7.23800000"
+//             },
+//         ],
+//          "KHA": [
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/xrp.png",
+//                 "symbol": "XRPUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 3,
+//                 "name": "Ripple",
+//                 "currency": "XRP",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "1",
+//                 "decimal_pair": "5",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-29T00:23:11.000Z",
+//                 "price": "0.60970000",
+//                 "change": "-5.41",
+//                 "volume": "478484967.00000000",
+//                 "high": "0.64630000",
+//                 "low": "0.58010000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/doge.png",
+//                 "symbol": "DOGEUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 4,
+//                 "name": "Dogecoin",
+//                 "currency": "DOGE",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "0",
+//                 "decimal_pair": "7",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:54:35.000Z",
+//                 "price": "0.12930000",
+//                 "change": "-4.08",
+//                 "volume": "1602922710.00000000",
+//                 "high": "0.13750000",
+//                 "low": "0.12500000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/bnb.png",
+//                 "symbol": "BNBUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 5,
+//                 "name": "Binance",
+//                 "currency": "BNB",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "3",
+//                 "decimal_pair": "4",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:54:39.000Z",
+//                 "price": "378.60000000",
+//                 "change": "-5.84",
+//                 "volume": "1248505.88300000",
+//                 "high": "413.60000000",
+//                 "low": "370.70000000"
+//             },
+//             {
+//                 "image": "http://demo.finexchanges.com/backend/public/currency_images/cake.png",
+//                 "symbol": "CAKEUSDT",
+//                 "flag": "0",
+//                 "listed": false,
+//                 "id": 6,
+//                 "name": "PancakeSwap",
+//                 "currency": "CAKE",
+//                 "pair_with": "USDT",
+//                 "decimal_currency": "3",
+//                 "decimal_pair": "3",
+//                 "buy_desc": "",
+//                 "sell_desc": "",
+//                 "created_at": "2022-02-28T15:29:22.000Z",
+//                 "updated_at": "2022-03-04T18:55:23.000Z",
+//                 "price": "7.44500000",
+//                 "change": "-4.59",
+//                 "volume": "3730426.59000000",
+//                 "high": "7.94400000",
+//                 "low": "7.23800000"
+//             },
+//         ],
+//   }}
+
+//     const [isLoading, setLoading] = useState(true);
+//   const [userInput,setUserInput] = useState([]);
+
+//   const [data, setData] = useState([]);
+//   const [online, setonline] = useState();
+
+
+//   // useEffect(() => {
+
+//   //   fetch("http://node.finexchanges.com/list-crypto/get")
+//   //     .then((response) => response.json())
+//   //     .then((json) => setData(json))
+//   //     .catch((error) => console.error(error))
+//   //     .finally(() => setLoading(false));
+
+
+
+//   // },[]);
+
+//  useEffect(() => {
+// Axios.get('http://node.finexchanges.com/list-crypto/get')
+//         .then((response) => setData(response.data["data"]))
+
+//       .catch((error) => console.error(error))
+//       .finally(() => setLoading(false));
+//   }, []);
+
+
+
+
+// var map=new HashMap();
+
+// // const rahul= Object.keys(responsedata["data"]).forEach(key => {
+
+// // responsedata["data"][key].forEach((number, index) => {
+// // //  console.log(responsedata["data"])
+
+// //   if(number["symbol"]=="BNBUSDT"){
+// //     number["price"]=userInput;
+// // //  console.log(number);
+// // // console.log(responsedata["data"])
+// //   }
+
+// // });
+
+
+// // });
+
+
+//  const rahul1= Object.keys(data).forEach(key => {
+
+
+// data[key].forEach((number, index) => {
+//   if(number["symbol"]==userInput.s){
+//     number["price"]=userInput.c;
+//     number["change"]=userInput.P;
+// }
+
+// });
+
+// });
+
+
+// //  const rahul1= Object.keys(data).forEach(key => {
+
+
+// // data[key].forEach((number, index) => {
+// //   if(number["symbol"]=="DOGEUSDT"){
+// //     number["price"]=userInput;
+
+// //   }
+
+// // });
+
+// // });
+
+
+
+// // map.forEach((responsedata["data"]["USDT"])=>{
+// //  console.log()
+
+// // });
+
+
+
+// // const rahul1= Object.keys(responsedata["data"]["USDT"]).forEach(key => {
+
+// // if(responsedata["data"]["USDT"][0]["symbol"]=="XRPUSDT"){
+// //  console.log(key,responsedata["data"]["USDT"][0]["symbol"]);
+// // }else{
+// //  console.log(key,responsedata["data"]["USDT"][1]["symbol"]);
+
+// // }
+// // });
+// // console.log(Object.keys(map.get("USDT")[0]))
+// // console.log(map.get("USDT")[0]["symbol"]);
+// // console.log(Object.values(map.get("USDT")[0]))
+
+
+
+// const count = Object.keys(data).length;
+// for (let index = 0; index <count; index++) {
+//     // console.log(Object.values(0data.data)[index]) ;
+
+
+//     map.set( Object.keys(data.data)[index],Object.values(data.data?.USDT))
+
+// }
+// map.forEach(function(values, keys) {
+//     console.log(keys + " : " + values);
+// });
+
+
+
+
+
+
+//   const [isModalVisible, setModalVisible] = useState(false);
+
+//     const toggleModal = () => {
+//         setModalVisible(!isModalVisible);
+//     };
+
+
+
+//     return (
+//         <View style={styles.main}>
+//             <View style={styles.top}>
+//                 <Text style={styles.CoinText}>Coin Name</Text>
+//                 <View style={{ flexDirection: 'row' }}>
+//                     <Text style={styles.CoinText1}>Price</Text>
+//                     <Image style={styles.img1} source={require('../Assets/arrow-up.png')}></Image>
+//                 </View>
+//                 <Text style={styles.CoinText}>24H Change</Text>
+
+//             </View>
+//             <View style={styles.line}></View>
+
+
+//             <View>
+//                 <Modal isVisible={isModalVisible}>
+//                     <View style={styles.modalView}>
+//                         <View style={styles.modalView1}>
+//                             <View style={styles.row}>
+//                                 <Image style={styles.lighticon1} source={require('../Assets/bitcoin.png')} />
+//                                 <Text style={styles.LiveText}>Bitcoin Coin</Text>
+//                             </View>
+//                             <View style={styles.row1}>
+//                                 <View>
+//                                     <Image style={styles.img2} source={require('../Assets/Plus.png')}></Image>
+//                                     <Text style={{ fontSize: 10 }}>Price Alert</Text>
+
+//                                 </View>
+//                                 <View >
+//                                     <TouchableOpacity onPress={toggleModal}>
+//                                         <Image style={styles.img3} source={require('../Assets/cross.png')}></Image>
+//                                         <Text style={{ fontSize: 10 }}>Cancel</Text>
+//                                     </TouchableOpacity>
+//                                 </View>
+//                             </View>
+//                         </View>
+//                         <View style={styles.line}></View>
+//                         <View style={styles.bottomView}>
+//                             <Text style={styles.LiveText}>Rs.29,120.87</Text>
+//                             <View style={{ flexDirection: 'row' }}>
+//                                 <Image style={styles.img4} source={require('../Assets/top.png')}></Image>
+//                                 <Text style={styles.Modal}>+13.41%</Text>
+//                                 <Text style={styles.ModalText1}>[+1,481,46]</Text>
+//                             </View>
+//                         </View>
+//                         <TouchableOpacity onPress={toggleModal} style={[styles.btnModal, { backgroundColor: 'green' }]}>
+//                             <Text style={styles.LiveTextper}>BUY</Text>
+
+//                         </TouchableOpacity>
+//                         <View style={styles.lastView}>
+//                             <Text style={styles.ModalText2}>view price chart & details</Text>
+//                             <Image style={styles.img5} source={require('../Assets/right.png')}></Image>
+//                         </View>
+//                     </View>
+//                 </Modal>
+//             </View>
+
+
+//             <View style={{ width: wp(98), alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', marginTop: hp(1) }}>
+//                 <FlatList
+//                  showsVerticalScrollIndicator={false}
+//                     // data={cryptodata[0]["USDT"]}
+// // data={data?.tickers}
+// //  data={data.data?.USDT}
+// // data={data1}
+// // data={condition()}
+//  data={data?.USDT}
+// // data={number}
+// // data={cryptodata}
+
+// //  data={responsedata.data?.USDT}
+// //  data={responsedata[data]}
+//   // data={data}
+//   keyExtractor={(item, index) => {
+//             return index.toString();
+//           }}
+//                     renderItem={({ item, index}) => {
+//                         // console.log(item?.USDT[0].name);
+//                         return (
+//                             <View>
+//                                 <View style={styles.CoinView}>
+//                                     <View style={{ flexDirection: 'row' }}>
+//                                         <Image style={styles.lighticon1} source={{uri:item.image}} />
+//                                         <View style={styles.vertical}>
+//                                             {/* <Text style={styles.LiveText}>{item?.USDT[0].name}</Text> */}
+//                                             <Text style={styles.LiveText}>{item.name}</Text>
+//                                             <Text style={styles.LiveText1}>{item.currency}</Text>
+//                                         </View>
+//                                     </View>
+//                               <Text style={[styles.PricesText,{color:item.price >0 ? 'green' :'red'}]}>{item.price}</Text>
+
+
+//                                     <TouchableOpacity onPress={toggleModal} style={[styles.btnLive, { backgroundColor: item.change> 0 ? 'green' :'red' }]}>
+//                                         <Text style={styles.LiveTextper}>{item.change}%</Text>
+//                                     </TouchableOpacity>
+
+//                                 </View>
+//                                 <View style={{ backgroundColor: '#e8a121', height: hp(.2) }}></View>
+
+//                             </View>
+//                         );
+//                     }}
+//                 />
+
+//             </View>
+
+//         </View>
+//     );
+// }
+// export default USDT;
+
+
+
+
+// // import React,{useState,useEffect} from 'react';
+// // import { Text, View, ImageBackground, Image, FlatList,TouchableOpacity } from 'react-native';
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// // import MyWishlist from '../Components/PricesScreens/MyWishlist';
+// // import AllCoins from '../Components/PricesScreens/AllCoins';
+// // import styles from '../Components/StyleSheet';
+// // import { TextInput,  } from 'react-native-gesture-handler';
+// // import AntDesign from 'react-native-vector-icons/AntDesign';
+// // import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// // import Axios from 'axios';
+// // import BTC from '../Components/PricesScreens/BTC';
+// // import BNB from '../Components/PricesScreens/BNB';
+// // import INR from '../Components/PricesScreens/INR';
+// // import USDT from '../Components/PricesScreens/USDT';
+// // const Tab = createMaterialTopTabNavigator();
+// // import { TabView, SceneMap } from 'react-native-tab-view';
+// // import TabSelectorAnimation from 'react-native-tab-selector'
+
+// // const Prices = () => {
+// //       const [isLoading, setLoading] = useState(true);
+// //   const [userInput,setUserInput] = useState([]);
+// //   const [top, settop] = useState('');
+
+// //   const [data, setData] = useState([]);
+// //  const [indexTab, setIndexTab] = useState(0)
+
+// //    useEffect(() => {
+// // Axios.get('http://node.finexchanges.com/list-crypto/get')
+// //         .then((response) => setData(response.data["data"]))
+// //       .catch((error) => console.error(error))
+// //       .finally(() => setLoading(false));
+// //   }, []);
+
+// // // Object.keys(data).forEach((number, index)=>{
+// // //   console.log(index)
+// // // })
+
+// //     // const [state, setState]=useState({
+// //     //     backgroundColor: '#e8a121',
+// //     // backgroundColor2: '#291b0f',
+// //     // pressed: false,
+// //     // data:true ,
+// //     // })
+// // //  const changeColor=()=>{
+// // //         if(!state.pressed){
+// // //            setState({ pressed: true,backgroundColor: '#291b0f', backgroundColor2: '#e8a121',});
+
+// // //         } else {
+// // //           setState({ pressed: false, backgroundColor: '#e8a121' ,backgroundColor2: '#291b0f'});
+
+// // //         }
+// // //       }
+// //     //  console.log(Object.keys(data))
+
+
+// //   const array=Object.keys(data);
+// //   array.unshift("Wishlist");
+// //  var myloop = [];
+
+// // for (let i = 0; i < array.length; i++) {
+// // //  console.log(array)
+// //   myloop.push(
+// //     <View key={i}>
+// //     <Text>{array[i]}</Text>
+// //     </View>
+// //   );
+// // }
+
+// //   // <TabView
+// //   //     navigationState={{ index, routes }}
+
+// //   //     onIndexChange={setIndex}
+// //   //    renderScene={SceneMap({
+// //   //   first: BNB,
+// //   //   second: INR,
+// //   // })}
+// //   //   />
+// // //  const renderScene = SceneMap({
+// // //   first: BNB,
+// // //   second: INR,
+// // // });
+
+// // //  const [index, setIndex] = React.useState(0);
+// // //   const [routes] = React.useState([
+// // //     { key: 'first', title: 'First' },
+// // //     { key: 'second', title: 'Second' },
+
+// // //   ]);
+// //     return (
+
+// //         <View style={styles.container}>
+
+// //  <View>
+// //                 <ImageBackground style={{ width: '100%', height: 300 }} source={require('../Components/Assets/back.png')}>
+// //                     <View style={styles.PricesView}>
+// //                         <Text style={styles.Prices}>Prices</Text>
+// //                         <View style={styles.PricesTextInput}>
+// //                             <View style={{ alignSelf: 'center' }}>
+// //                                 <AntDesign name="search1" color='#7e7c7a' size={25} style={{ marginLeft: wp(2) }} />
+// //                             </View>
+// //                             <TextInput placeholder='search coins to invest...' style={styles.PricesTextInput1}></TextInput>
+// //                             </View>
+
+// // <View style={{  height: 60, width:wp(95),
+// // justifyContent:'center',alignSelf:'center',marginTop:hp(2)}}>
+// //    <TabSelectorAnimation
+// //         onChangeTab={setIndexTab}
+// //         style={styles.tabSelector}
+// //         tabs={myloop}
+// //       />
+// //       <Text></Text>
+// // </View>
+
+// // <View style={{width:wp(95), height:hp(100), backgroundColor:'#ffebdc', marginTop:hp(2),borderRadius:wp(3),alignSelf:'center'}}>
+
+
+// //                         </View>
+
+// //                     </View>
+// //                 </ImageBackground>
+// //             </View>
+
+
+
+
+// //         </View>
+// //     );
+// // }
+// // export default Prices;
+
+// import React,{useState,useEffect} from 'react';
+// import { Text, View, ImageBackground, Image, FlatList,TouchableOpacity } from 'react-native';
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// import MyWishlist from '../Components/PricesScreens/MyWishlist';
+// import AllCoins from '../Components/PricesScreens/AllCoins';
+// import styles from '../Components/StyleSheet';
+// import { TextInput,  } from 'react-native-gesture-handler';
+// import AntDesign from 'react-native-vector-icons/AntDesign';
+// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// import Axios from 'axios';
+// import BTC from '../Components/PricesScreens/BTC';
+// import BNB from '../Components/PricesScreens/BNB';
+// import INR from '../Components/PricesScreens/INR';
+// import USDT from '../Components/PricesScreens/USDT';
+// const Tab = createMaterialTopTabNavigator();
+// import { TabView, SceneMap } from 'react-native-tab-view';
+// import TabSelectorAnimation from 'react-native-tab-selector';
+// import DynamicTabView from 'react-native-dynamic-tab-view-test';
+// import HashMap from 'hashmap';
+
+// const Prices = () => {
+//       const [isLoading, setLoading] = useState(true);
+//   const [userInput,setUserInput] = useState([]);
+//   const [top, settop] = useState('');
+
+//   const [data, setData] = useState([]);
+//  const [indexTab, setIndexTab] = useState(0)
+
+//    useEffect(() => {
+// Axios.get('http://node.finexchanges.com/list-crypto/get')
+//         .then((response) => setData(response.data["data"]))
+//       .catch((error) => console.error(error))
+//       .finally(() => setLoading(false));
+//   }, []);
+
+// // Object.keys(data).forEach((number, index)=>{
+// //   console.log(index)
+// // })
+
+//     // const [state, setState]=useState({
+//     //     backgroundColor: '#e8a121',
+//     // backgroundColor2: '#291b0f',
+//     // pressed: false,
+//     // data:true ,
+//     // })
+// //  const changeColor=()=>{
+// //         if(!state.pressed){
+// //            setState({ pressed: true,backgroundColor: '#291b0f', backgroundColor2: '#e8a121',});
+
+// //         } else {
+// //           setState({ pressed: false, backgroundColor: '#e8a121' ,backgroundColor2: '#291b0f'});
+
+// //         }
+// //       }
+//     //  console.log(Object.keys(data))
+
+
+
+
+// const DATA=new HashMap();
+
+
+
+// const _renderItem = (item, index) => {
+//  DATA.set(Object.keys(array[index]),Object.values(array[index]))
+// DATA.forEach(function(values, keys) {
+//     console.log(keys + " : " + values);
+// });
+// // key={array[item]}
+// // console.log((array[index]))
+//     return (
+//        <View key={(array[index])}>
+//     <Text>{array[index]}</Text>
+//     </View>
+//     );
+//   };
+// const onChangeTab = index => {};
+
+
+
+
+
+//   const array=Object.keys(data);
+//   array.unshift("Wishlist");
+
+
+//     return (
+
+//         <View style={styles.container}>
+
+//  <View>
+//                 <ImageBackground style={{ width: '100%', height: 300 }} source={require('../Components/Assets/back.png')}>
+//                     <View style={styles.PricesView}>
+//                         <Text style={styles.Prices}>Prices</Text>
+//                         <View style={styles.PricesTextInput}>
+//                             <View style={{ alignSelf: 'center' }}>
+//                                 <AntDesign name="search1" color='#7e7c7a' size={25} style={{ marginLeft: wp(2) }} />
+//                             </View>
+//                             <TextInput placeholder='search coins to invest...' style={styles.PricesTextInput1}></TextInput>
+//                             </View>
+
+// <View style={{width:wp(95), height:hp(50), backgroundColor:'#ffebdc', marginTop:hp(2),borderRadius:wp(3),alignSelf:'center'}}>
+//     <DynamicTabView
+//         data={array}
+//         renderTab={_renderItem}
+//         onChangeTab={onChangeTab}
+//         // defaultIndex={defaultIndex}
+//           containerStyle={styles.tabView}
+//         headerBackgroundColor={'red'}
+//       />
+
+// </View>
+
+// <View style={{width:wp(95), height:hp(100), backgroundColor:'#ffebdc', marginTop:hp(2),borderRadius:wp(3),alignSelf:'center'}}>
+
+//                         </View>
+
+//                     </View>
+//                 </ImageBackground>
+//             </View>
+
+
+
+
+//         </View>
+//     );
+// }
+// export default Prices;
+
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+// import { View, Text, Image, TouchableOpacity, document,
+// TextInput } from 'react-native';
+// import { FlatList } from 'react-native-gesture-handler';
+// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// import styles from './StyleSheet';
+// import Modal from "react-native-modal";
+// import HashMap from 'hashmap';
+// import Axios from 'axios';
+// import WS from 'react-native-websocket'
+
+// const USDT = () => {
+
+//  var price_status;
+
+
+
+// //     const pricesWs = new WebSocket('wss://stream.binance.com:9443/ws');
+// //     pricesWs.onopen = () => {
+// //        console.log('connect');
+// //     pricesWs.send(
+// //               JSON.stringify({
+
+// //                   "method": "SUBSCRIBE",
+// //                   "params":
+// //                   [
+// //                  "dogeusdt@ticker",
+// //               "xrpusdt@ticker",
+// //                  "bnbusdt@ticker",
+// //                  "cakeusdt@ticker",
+// //                  "maticusdt@ticker",
+// //                  "trxusdt@ticker",
+// //                  "ltcusdt@ticker",
+// //                  "ethbtc@ticker",
+// //                  "1inchusdt@ticker",
+// //                  "wrxusdt@ticker",
+// //                  "dotusdt@ticker",
+// //                  "solusdt@ticker",
+// //                  "xrpbtc@ticker",
+// //                  "dogebtc@ticker",
+// //                  "maticbtc@ticker",
+// //                  "trxbtc@ticker",
+// //                  "solbtc@ticker",
+// //                  "bnbbtc@ticker",
+// //                  "1inchbtc@ticker",
+// //                  "wrxbtc@ticker",
+// //                  "ltcbtc@ticker",
+// //                 //  "adabtc@ticker",
+// //                 //  "unibtc@ticker",
+// //                 //  "cakebtc@ticker",
+// //                 //  "neobtc@ticker",
+// //                 //  "dotbtc@ticker",
+// //                 //  "adausdt@ticker",
+// //                 //  "shibusdt@ticker",
+// //                 //  "uniusdt@ticker",
+// //                 //  "neousdt@ticker",
+// //                 //  "xrpbnb@ticker",
+// //                 //  "maticbnb@ticker",
+// //                 //  "trxbnb@ticker",
+// //                 //  "solbnb@ticker",
+// //                 //  "wrxbnb@ticker",
+// //                 //  "ltcbnb@ticker",
+// //                 //  "adabnb@ticker",
+// //                 //  "dotbnb@ticker",
+// //                 //  "cakebnb@ticker",
+// //                 //  "neobnb@ticker",
+// //                 //  "btcinr@ticker",
+// //                 //  "ethinr@ticker",
+// //                 //  "xrpinr@ticker",
+// //                 //  "dogeinr@ticker",
+// //                 //  "bnbinr@ticker",
+// //                 //  "cakeinr@ticker",
+// //                 //  "maticinr@ticker",
+// //                 //  "trxinr@ticker",
+// //                 //  "ltcinr@ticker",
+// //                 //  "1inchinr@ticker",
+// //                 //  "wrxinr@ticker",
+// //                 //  "dotinr@ticker",
+// //                 //  "solinr@ticker",
+// //                 //  "adainr@ticker",
+// //                 //  "shibinr@ticker",
+// //                 //  "uniinr@ticker",
+// //                 //  "neoinr@ticker",
+// //                 //  "btcusdt@ticker",
+// //                 //  "ethusdt@ticker",
+// //                 //  "lunausdt@ticker",
+// //                 //  "ftmusdt@ticker",
+// //                 //  "icpusdt@ticker"
+// //                   ],
+// //                   "id": 1
+
+// //               })
+
+// //             )
+// //     }
+
+// //     pricesWs.onmessage = function (msg) {
+// //  let stock=JSON.parse(msg.data);
+// // setUserInput(stock)
+
+// //  }
+// //  pricesWs.onerror = (e) => {
+// //   // an error occurred
+// //   console.log(e.message);
+// // };
+
+// // pricesWs.onclose = (e) => {
+// //   // connection closed
+// //   console.log(e.code, e.reason);
+// // };
+
+
+
+//     const [isLoading, setLoading] = useState(true);
+//   const [userInput,setUserInput] = useState([]);
+
+//   const [data, setData] = useState([]);
+//   const [online, setonline] = useState();
+
+
+//   // useEffect(() => {
+
+//   //   fetch("http://node.finexchanges.com/list-crypto/get")
+//   //     .then((response) => response.json())
+//   //     .then((json) => setData(json))
+//   //     .catch((error) => console.error(error))
+//   //     .finally(() => setLoading(false));
+
+
+
+//   // },[]);
+
+// let theArray = []
+
+//  useEffect(() => {
+//    console.log("hey")
+// Axios.get('http://node.finexchanges.com/list-crypto/get')
+//         .then(response =>  {
+//                 const newItem = {
+//                   id: response.data["data"].id,
+//                   name: response.data["data"].name,
+//                  };
+//                console.log(response.data["data"] + 'rahul')
+//                 // console.log(newItem.id)
+//                 theArray.push(newItem);
+
+//              })
+
+//       // .catch((error) => console.error(error))
+//       // .finally(() => setLoading(false ));
+//   });
+
+// //      useEffect(() => {
+// // Axios.get('http://node.finexchanges.com/list-crypto/get')
+// //         .then((response) =>  {
+// //                  const { id, name } = response.data["data"];
+// //                 theArray.push({ id, name })
+// // console.log(theArray)
+// //              })
+
+// //       // .catch((error) => console.error(error))
+// //       // .finally(() => setLoading(false));
+// //   });
+
+
+// // var map=new HashMap();
+
+// // const rahul= Object.keys(responsedata["data"]).forEach(key => {
+
+// // responsedata["data"][key].forEach((number, index) => {
+// // //  console.log(responsedata["data"])
+
+// //   if(number["symbol"]=="BNBUSDT"){
+// //     number["price"]=userInput;
+// // //  console.log(number);
+// // // console.log(responsedata["data"])
+// //   }
+
+// // });
+
+
+// // });
+
+
+// //  const rahul1= Object.keys(data).forEach(key => {
+
+
+// // data[key].forEach((number, index) => {
+// //   if(number["symbol"]==userInput.s){
+// //   number["price"]=userInput.c;
+// //     number["change"]=userInput.P;
+// //   }
+
+// // });
+
+// // });
+
+
+// //  const rahul1= Object.keys(data).forEach(key => {
+
+
+// // data[key].forEach((number, index) => {
+// //   if(number["symbol"]=="DOGEUSDT"){
+// //     number["price"]=userInput;
+
+// //   }
+
+// // });
+
+// // });
+
+
+
+// // map.forEach((responsedata["data"]["USDT"])=>{
+// //  console.log()
+
+// // });
+
+
+
+// // const rahul1= Object.keys(responsedata["data"]["USDT"]).forEach(key => {
+
+// // if(responsedata["data"]["USDT"][0]["symbol"]=="XRPUSDT"){
+// //  console.log(key,responsedata["data"]["USDT"][0]["symbol"]);
+// // }else{
+// //  console.log(key,responsedata["data"]["USDT"][1]["symbol"]);
+
+// // }
+// // });
+// // console.log(Object.keys(map.get("USDT")[0]))
+// // console.log(map.get("USDT")[0]["symbol"]);
+// // console.log(Object.values(map.get("USDT")[0]))
+
+
+
+// // const count = Object.keys(data).length;
+// // for (let index = 0; index <count; index++) {
+// //     // console.log(Object.values(0data.data)[index]) ;
+
+
+// //     map.set( Object.keys(data.data)[index],Object.values(data.data?.USDT))
+
+// // }
+// // map.forEach(function(values, keys) {
+// //     console.log(keys + " : " + values);
+// // });
+
+//   const [isModalVisible, setModalVisible] = useState(false);
+
+//     const toggleModal = () => {
+//         setModalVisible(!isModalVisible);
+//     };
+
+
+
+//     return (
+//         <View style={styles.main}>
+//         <View>
+//          <WS
+//          ref={ref => {this.ws = ref}}
+//           url="wss://stream.binance.com:9443/ws"
+//           onOpen={() => {
+//             console.log('Open!')
+//             this.ws.send(JSON.stringify({
+
+//                   "method": "SUBSCRIBE",
+//                   "params":
+//                   [
+//                  "dogeusdt@ticker",
+//               "xrpusdt@ticker",
+//                  "bnbusdt@ticker",
+//                  "cakeusdt@ticker",
+//                  "maticusdt@ticker",
+//                  "trxusdt@ticker",
+//                  "ltcusdt@ticker",
+//                  "ethbtc@ticker",
+//                  "1inchusdt@ticker",
+//                  "wrxusdt@ticker",
+//                  "dotusdt@ticker",
+//                  "solusdt@ticker",
+//                  "xrpbtc@ticker",
+//                  "dogebtc@ticker",
+//                  "maticbtc@ticker",
+//                  "trxbtc@ticker",
+//                  "solbtc@ticker",
+//                  "bnbbtc@ticker",
+//                  "1inchbtc@ticker",
+//                  "wrxbtc@ticker",
+//                  "ltcbtc@ticker",
+//                  "adabtc@ticker",
+//                  "unibtc@ticker",
+//                  "cakebtc@ticker",
+//                  "neobtc@ticker",
+//                  "dotbtc@ticker",
+//                  "adausdt@ticker",
+//                  "shibusdt@ticker",
+//                  "uniusdt@ticker",
+//                  "neousdt@ticker",
+//                  "xrpbnb@ticker",
+//                  "maticbnb@ticker",
+//                  "trxbnb@ticker",
+//                  "solbnb@ticker",
+//                  "wrxbnb@ticker",
+//                  "ltcbnb@ticker",
+//                  "adabnb@ticker",
+//                  "dotbnb@ticker",
+//                  "cakebnb@ticker",
+//                  "neobnb@ticker",
+//                  "btcinr@ticker",
+//                  "ethinr@ticker",
+//                  "xrpinr@ticker",
+//                  "dogeinr@ticker",
+//                  "bnbinr@ticker",
+//                  "cakeinr@ticker",
+//                  "maticinr@ticker",
+//                  "trxinr@ticker",
+//                  "ltcinr@ticker",
+//                  "1inchinr@ticker",
+//                  "wrxinr@ticker",
+//                  "dotinr@ticker",
+//                  "solinr@ticker",
+//                  "adainr@ticker",
+//                  "shibinr@ticker",
+//                  "uniinr@ticker",
+//                  "neoinr@ticker",
+//                  "btcusdt@ticker",
+//                  "ethusdt@ticker",
+//                  "lunausdt@ticker",
+//                  "ftmusdt@ticker",
+//                  "icpusdt@ticker" ],
+//                   "id": 1
+
+//               }))
+//           }}
+//           onMessage={function (msg) {
+//  let stock=JSON.parse(msg.data);
+// // console.log(stock)
+// setUserInput(stock)
+//  }}
+//           // onError={console.log('Error!')}
+//           // onClose={console.log('Close!')}
+//           reconnect // Will try to reconnect onClose
+//         />
+//         </View>
+//             <View style={styles.top}>
+//                 <Text style={styles.CoinText}>Coin Name</Text>
+
+
+//                 <View style={{ flexDirection: 'row' }}>
+//                     <Text style={styles.CoinText1}>Price</Text>
+
+//                 </View>
+//                 <Text style={styles.CoinText}>24H Change</Text>
+
+//             </View>
+//             <View style={styles.line}></View>
+
+
+//             <View>
+//                 <Modal isVisible={isModalVisible}>
+//                     <View style={styles.modalView}>
+//                         <View style={styles.modalView1}>
+//                             <View style={styles.row}>
+
+//                                 <Text style={styles.LiveText}>Bitcoin Coin</Text>
+//                             </View>
+//                             <View style={styles.row1}>
+//                                 <View>
+
+//                                     <Text style={{ fontSize: 10 }}>Price Alert</Text>
+
+//                                 </View>
+//                                 <View >
+//                                     <TouchableOpacity onPress={toggleModal}>
+
+//                                         <Text style={{ fontSize: 10 }}>Cancel</Text>
+//                                     </TouchableOpacity>
+//                                 </View>
+//                             </View>
+//                         </View>
+//                         <View style={styles.line}></View>
+//                         <View style={styles.bottomView}>
+//                             <Text style={styles.LiveText}>Rs.29,120.87</Text>
+//                             <View style={{ flexDirection: 'row' }}>
+
+//                                 <Text style={styles.Modal}>+13.41%</Text>
+//                                 <Text style={styles.ModalText1}>[+1,481,46]</Text>
+//                             </View>
+//                         </View>
+//                         <TouchableOpacity onPress={toggleModal} style={[styles.btnModal, { backgroundColor: 'green' }]}>
+//                             <Text style={styles.LiveTextper}>BUY</Text>
+
+//                         </TouchableOpacity>
+//                         <View style={styles.lastView}>
+//                             <Text style={styles.ModalText2}>view price chart & details</Text>
+
+//                         </View>
+//                     </View>
+//                 </Modal>
+//             </View>
+
+//             <View style={{ width: wp(98), alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', marginTop: hp(1) }}>
+//                 <FlatList
+//                  showsVerticalScrollIndicator={false}
+//                     // data={cryptodata[0]["USDT"]}
+// // data={data?.tickers}
+// //  data={data.data?.USDT}
+// // data={data1}
+// // data={condition()}
+//  data={theArray}
+// // data={number}
+// // data={cryptodata}
+// //  data={responsedata.data?.USDT}
+// //  data={responsedata[data]}
+//   // data={data}
+//   keyExtractor={(item, index) => {
+//             return index.toString();
+//           }}
+//                     renderItem={({ item, index}) => {
+//                 if (item.price>userInput.c){
+// price_status="Low";
+//   }else if(item.price<userInput.c){
+// price_status="High";
+//   }else if(item.price==userInput.c){
+
+// price_status="Equal";
+//   }else{
+//     price_status="notequal";
+//   }         // console.log(item?.USDT[0].name);
+//                         return (
+//                             <View>
+//                                 <View style={styles.CoinView}>
+//                                     <View style={{ flexDirection: 'row' }}>
+//                                         <Image style={styles.lighticon1} source={{uri:item.image}} />
+//                                         <View style={styles.vertical}>
+//                                             <Text style={styles.LiveText}>{item["name"]}</Text>
+//                                             <Text style={styles.LiveText1}>{item.currency}</Text>
+//                                         </View>
+//                                     </View>
+
+
+//                                     <TouchableOpacity onPress={toggleModal} style={[styles.btnLive, { backgroundColor: item.change> 0 ? 'green' :'red' }]}>
+//                                         <Text style={styles.LiveTextper}>{item.change}%</Text>
+//                                     </TouchableOpacity>
+
+//                                 </View>
+//                                 <View style={{ backgroundColor: '#e8a121', height: hp(.2) }}></View>
+
+//                             </View>
+//                         );
+//                     }}
+//                 />
+
+//             </View>
+
+//         </View>
+//     );
+// }
+// export default USDT;

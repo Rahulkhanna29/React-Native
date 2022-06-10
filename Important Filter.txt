@@ -1,0 +1,44 @@
+const array=[userInput]
+// // const buttonsListArr = [];
+
+// // for (let i = 0; i < array.length[data.tickers === array.s]; i++) 
+// // {
+// //  buttonsListArr.push(
+// //     //  console.log(array)
+// //  <Text  style={styles.CoinText}>{array}</Text> 
+  
+// //  );
+// // }
+
+==================================================
+const playerInfo = [
+// //     {PlayerID: 123, PhotoURL: 'url123'},
+// //     {PlayerID: 345, PhotoURL: 'url345'},
+// //     {PlayerID: 678, PhotoURL: 'url678'},
+// //     {PlayerID: 910, PhotoURL: 'url910'},
+// //     {PlayerID: 1112, PhotoURL: "url1112"},
+// //     {PlayerID: 1213, PhotoURL: "url1213"}
+// //    ];
+// //   // socket
+  
+  
+// //   const playerIDs = [123, 345, 678, 910]     
+// //   // ticker api
+// // const tick=[data.tickers]
+// // const sock=[userInput]
+
+// // // let leaderPhotos = sock.filter((info) => tick.includes(info)).map(id => id);
+// // let leaderPhotos = playerInfo.filter((info) => playerIDs.includes(info.PlayerID)).map(id => id.PhotoURL);
+
+==========================================
+  const array=Object.keys(data);
+ var myloop = [];
+
+for (let i = 0; i < array.length; i++) {
+//  console.log(array)
+  myloop.push(
+    <View key={i}> 
+    <Text>{array[i]}</Text>   
+    </View> 
+  );     
+}

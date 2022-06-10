@@ -1,0 +1,389 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useCallback,useRef } from 'react';
+import { Text, View, ImageBackground, Image, FlatList, TouchableOpacity,ActivityIndicator } from 'react-native';
+import styles from '../Components/StyleSheet';
+import { TextInput, } from 'react-native-gesture-handler';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Axios from 'axios';
+import DynamicTabView from 'react-native-dynamic-tab-view-test';
+import {getCoins} from '../Components/redux/actions';
+import { useSelector,useDispatch } from 'react-redux';
+// import WS from 'react-native-websocket';
+import Modal from 'react-native-modal';
+import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
+
+
+
+const PricesMain = () => {
+//   var rk;
+//   console.log(rk)
+//     const ws = useRef(null);
+//     useEffect(() => {
+//         ws.current = new WebSocket("wss://stream.binance.com:9443/ws/stream");
+//         ws.current.onopen = () =>{
+//             hh();
+//             console.log("ws opened");
+//             ws.current.send(JSON.stringify({
+
+//                 'method': 'SUBSCRIBE',
+//                 params: rahul,
+//                 'id': 1,
+    
+//             }));
+//         }
+//         ws.current.onclose = () => console.log("ws closed");
+     
+//         const wsCurrent = ws.current;
+
+//         return () => {
+//             wsCurrent.close();
+//         };
+//     }, []);
+  
+//    useEffect(() => {
+//         if (!ws.current) return;
+
+//         ws.current.onmessage = async (e) => {
+//             const message = JSON.parse(e.data);
+//             // console.log("e", message);
+//            setUserInput(message);
+//         };
+//     }, []);
+
+
+const navigation =useNavigation();
+    const dispatch = useDispatch();
+
+    const {coins} = useSelector(state => state.userReducer);
+
+    const [top, settop] = useState('');
+    const [isLoading,setLoading]=useState(true);
+
+    // const theArray = [{title:'Wishlist'}];
+
+// console.log(theArray)
+    // console.log(coins.NewData);
+//    console.log(coins);
+
+// ========================================================  Working part  ye sara
+    // useEffect(() => {
+    // //  UseMe();
+    // // dispatch(getCoins());
+
+    //  },[]);
+
+    //  const UseMe=()=>{
+    //     for (let index = 0; index <  Object.keys(coins["data"]).length; index++) {
+    //         const newItem = {
+    //        title:  Object.keys(coins["data"])[index],
+    //         // NewData:coins.tickers[index],
+    //         NewData1:coins["data"],
+    //   }
+    //         theArray.push(newItem);
+    // //   console.log( Object.values(coins["data"])['price'][index])
+    //     }
+    //     settop(theArray);
+    //     setLoading(false);
+    //  }
+// =================================================================== yaha tak
+
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
+
+    const [userInput,setUserInput] = useState([]);
+// =============================================================== ye sara
+// console.log(clickedIndex)
+
+// Object.keys(coins["data"]).forEach(key => {
+//     // console.log(key)
+//     coins["data"][key].forEach((number, index) => {
+//   if (number.symbol === userInput.s){
+//   number.price = userInput.c;
+//     number.change = userInput.P;
+//   }
+// });
+
+// }); 
+// ===================================================================== yaha tak
+// console.log(DATA)
+  
+//    console.log(coins.data.USDT.name)
+    // const [isLoading, setLoading] = useState(true);
+    // const [userInput, setUserInput] = useState([]);
+    // const [data, setData] = useState([]);
+
+// useEffect(()=>{<Api/>},[]);
+// console.log(()=>rahul)
+
+// const khanna = require('../Components/API/Api');
+// console.log(khanna.first.name);
+
+// const mohan = require('../Components/API/Api');
+// console.log();
+ 
+// var map = new HashMap();
+
+    // useEffect(() => {
+    //     Axios.get('http://node.finexchanges.com/list-crypto/get')
+    //         .then((response) => setData(response.data["data"]))
+    //         .catch((error) => console.error(error))
+    //         .finally(() => setLoading(false));
+    // }, []);
+
+
+
+    //  console.log(theArray)
+    // useEffect(() => {
+    //     // console.log("hey")
+    //     Axios.get('http://node.finexchanges.com/list-crypto/get')
+    //         .then(response => {
+    //             for (let index = 0; index < Object.keys(response.data["data"]).length; index++) {
+    //                 const newItem = {
+    //                     title: Object.keys(response.data["data"])[index],
+    //                 };
+    //                 theArray.push(newItem)
+
+    //             }
+
+    //             settop(theArray);
+    //         })
+
+    //         .catch((error) => console.error(error))
+    //         .finally(() => setLoading(false));
+    // }, []);
+
+    // console.log(top)
+
+
+    const [clickedIndex, setClickedIndex] = useState([]);
+
+    // const onPress = () => {
+    //     setClickedIndex(clickedIndex + 1);
+    //   };
+// console.log(clickedIndex)
+// ======================================================================
+    const _renderItem = (item, index) => {
+        
+//   console.log(item)
+    //  console.log(item.NewData1?.[item.title][1]['price'])
+
+      
+     return (
+         <View style={{alignItems:'center'}}>
+               <View>
+       <FlatList
+        disableVirtualization={true}
+             initialNumToRender={200}
+                 showsVerticalScrollIndicator={false}
+ data={item.NewData1?.[item.title]} 
+
+//   keyExtractor={(item, index) => {
+//             return index.toString();
+//           }}
+
+keyExtractor={(item, index) => String(index)}
+
+  renderItem={({ item, index}) => {
+const itemClick = item => {
+//    rk = item;
+//    rk = item.price;
+setClickedIndex(item)
+//    console.log(item)
+    };
+               
+
+//                 if (item.price > userInput.c){
+// price_status = 'Low';
+//   } else if (item.price < userInput.c){
+// price_status = 'High';
+//   } else if (item.price === userInput.c){
+
+// price_status = 'Equal';
+//   } else {
+//     price_status = 'notequal';
+//   }         // console.log(item?.USDT[0].name);
+                        return (
+                            <View >
+                            <View >
+                                 <TouchableOpacity onPress={() => {[itemClick(item),toggleModal()]}} style={styles.CoinView}>
+                                    <View style={{ flexDirection: 'row' }}>
+                                      <Image style={styles.lighticon1} source={{uri:item.image}} /> 
+                                        <View style={styles.vertical}>
+                                            <Text style={styles.LiveText3}>{item.name}</Text>
+                                            <Text style={styles.LiveText1}>{item.currency}</Text>
+                                        </View>
+                                    </View>
+
+    {/* <Text style={[styles.PricesText,{ color: price_status == 'Low' ? 'red' : price_status == 'High' ? 'green' : price_status == 'Equal' ? 'black' : 'black'}]}>{parseFloat(item.price.toString(7))}</Text> */}
+    <Text style={styles.PricesText}>{parseFloat(item.price.toString(7))}</Text>
+                                    <TouchableOpacity onPress={toggleModal} style={[styles.btnLive, { backgroundColor: item.change > 0 ? 'green' : 'red' }]}>
+                                        <Text style={styles.LiveTextper}>{item.change}%</Text>
+                                    </TouchableOpacity>
+
+                                </TouchableOpacity>
+                                <View style={{ backgroundColor: '#e8a121', height: hp(0.2) }} />
+                              
+</View>
+<View style={{margin:1}}></View>
+                            </View>
+                        );
+
+
+
+
+                        
+                    }}
+                /> 
+
+             
+               </View>
+               <View>
+                <Modal animationIn={'bounce'} isVisible={isModalVisible}>
+                    <View style={styles.modalView}>
+                        <View style={styles.modalView1}>
+                            <View style={styles.row}>
+                                <Image style={styles.lighticon1}source={{uri:clickedIndex.image}} />
+                      <Text style={styles.LiveText}>{clickedIndex.name}</Text> 
+                            </View>
+                            <View style={styles.row1}>
+                                <View>
+                                    <Image style={styles.img2} source={require('../Components/Assets/Plus.png')} />
+                                    <Text style={{ fontSize: 10 }}>Price Alert</Text>
+
+                                </View>
+                                <View >
+                                    <TouchableOpacity onPress={toggleModal}>
+                                        <Image style={styles.img3} source={require('../Components/Assets/cross.png')} />
+                                        <Text style={{ fontSize: 10 }}>Cancel</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.line} />
+                        <View style={styles.bottomView}>
+                          <Text style={styles.LiveText}>{clickedIndex.price}</Text> 
+                            <View style={{ flexDirection: 'row' }}>
+                                <Icon name='caret-down' size={20} color={clickedIndex.change > 0 ? 'green' : 'red'} style={{marginRight:wp(1)}}/>
+                                <Text style={[styles.Modal,{color:clickedIndex.change > 0 ? "green" : 'red'}]}>{clickedIndex.change}%</Text>
+                                <Text style={[styles.ModalText1,{color:clickedIndex.change > 0 ? "green" : 'red'}]}>[{clickedIndex.change}]</Text>
+                            </View>
+                        </View>
+                        <TouchableOpacity  style={[styles.btnModal, { backgroundColor: 'green' }]}>
+                            <Text style={styles.LiveTextper}>BUY</Text>
+
+                        </TouchableOpacity>
+                        {/* <TouchableOpacity onPress={()=>[navigation.navigate('PricesLast'),toggleModal()]} style={styles.lastView}> */}
+                        <TouchableOpacity onPress={()=>[setTimeout(()=>navigation.navigate('PricesLast',{clickedIndex}),1000),toggleModal()]} style={styles.lastView}>
+                            <Text  style={styles.ModalText2}>view price chart & details</Text>
+                            <Image style={styles.img5} source={require('../Components/Assets/right.png')} />
+                        </TouchableOpacity>
+                    </View>
+                </Modal>
+            </View>
+</View>
+    
+
+
+)
+      
+       
+    };
+    const onChangeTab = index => {  
+        console.log(index)
+   
+    };
+    var newItem1;
+  
+
+    const rahul =[];
+    // console.log(rahul)
+    const hh=()=>{
+        for (let index = 0; index < coins.tickers.length; index++) {
+             newItem1 = coins.tickers[index].toLowerCase() + "@ticker";
+              rahul.push(newItem1);
+//  console.log(newItem1)
+           }
+     }
+
+
+    let khanna;
+// ========================================================================================
+    return (
+        <View style={styles.container}>
+         {/* <View> */}
+         {/* <WS
+         ref={ref => {khanna = ref;}}
+          url="wss://stream.binance.com:9443/ws/stream"
+          onOpen={() => {
+              hh();
+            console.log('Open!');
+            khanna.send(JSON.stringify({
+
+                  'method': 'SUBSCRIBE',
+                  params: rahul,
+                  'id': 1,
+
+              }));
+          }}
+          onMessage={function (msg) {
+ let stock = JSON.parse(msg.data);
+// console.log(stock)
+setUserInput(stock);
+
+ }}
+          onError={console.log('Error!')}
+          onClose={console.log('Close!')}
+    reconnect
+    // Will try to reconnect onClose
+        /> */}
+        
+        {/* </View> */}
+            <View>
+                <ImageBackground style={{ width: '100%', height: 300 }} source={require('../Components/Assets/back.png')}>
+                    <View style={styles.PricesView}>
+                        <Text style={styles.Prices}>Prices</Text>
+                        <View style={styles.PricesTextInput}>
+                            <View style={{ alignSelf: 'center' }}>
+                                <AntDesign name="search1" color='#7e7c7a' size={25} style={{ marginLeft: wp(2) }} />
+                            </View>
+                            <TextInput placeholder='search coins to invest...' style={styles.PricesTextInput1}></TextInput>
+                        </View>
+ </View>
+                </ImageBackground>
+            </View>
+            <View style={styles.BinanceView}>
+                <View style={styles.PriceAMin}>
+                {/* {isLoading ? <ActivityIndicator  size='large' color='e88533' style={{justifyContent:'center', alignItems:'center'}} /> : ( */}
+                <DynamicTabView 
+                                data={coins}
+                                // initialNumToRender={top.length}
+                                renderTab={_renderItem}
+                                onChangeTab={onChangeTab}
+                                //  defaultIndex={defaultIndex}
+                                // containerStyle={styles.tabView}
+                                headerBackgroundColor={'#26180c'}
+                        //         headerUnderlayColor={'#e88533'}
+                        //   headerTextStyle={'#e88533'}
+                              
+                            /> 
+                            {/* )} */}
+           </View> 
+            
+          
+</View>
+
+
+        </View>
+
+    );
+}
+export default PricesMain;
+{/* <View>
+    <Text>Hii Sir</Text>
+</View> */}
